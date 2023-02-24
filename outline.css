@@ -1,0 +1,15 @@
+.out{
+    width: 100px;
+    height: 100px;
+}
+#box1{
+    background-color :rgba(165, 42, 42, .8);
+    border: 1px solid brown;
+    margin: 20px;
+    outline: 40px solid brown;
+}
+#box2{
+    background-color: rgba(205, 92, 92, .8);
+    border: 1px solid indianred;
+    margin: 20px;
+}

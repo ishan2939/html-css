@@ -1,0 +1,19 @@
+#div1 {
+    width: calc(70% - 100px);
+    background-color: pink;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+#div2 {
+    background-color: green;
+    height: 100px;
+    width: max(50%, 200px);
+    margin-bottom: 30px;
+}
+
+#div3 {
+    background-color: blue;
+    height: 100px;
+    width: min(50%, 200px);
+}

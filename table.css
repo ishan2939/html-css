@@ -1,0 +1,12 @@
+  /*table, th, td {
+  border: 1px solid;
+}
+table {
+    border: 2px solid red;
+    border-collapse: collapse;
+}*/
+table tr:nth-child(odd) .col-3:nth-child(1),
+      table tr:nth-child(odd) .col-3:nth-child(2),
+      table tr:nth-child(odd) .col-3:nth-child(3){
+        background-color: rgb(148, 148, 255);
+      }

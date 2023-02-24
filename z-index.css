@@ -1,0 +1,33 @@
+.box{
+    width: 100px;
+    height: 100px;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+}
+#red{
+    position: relative;
+    color: white;
+    background-color: red;
+    z-index: 100;
+}
+#orange{
+    color: white;
+    background-color: orange;
+    position: relative;
+    top: -40px;
+    left: 50px;
+    /*z-index: 3;*/
+}
+#green{
+    font-size: smaller;
+    /*width: auto;
+    height: 50px;*/
+    background-color: green;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 500;
+    /*right: 0;*/
+}

@@ -1,0 +1,19 @@
+.box{
+    width: 150px;
+    height: 150px;
+    color: white;
+    background-color: black;
+    margin-bottom: 20px;
+}
+#box1{
+    overflow: visible;
+}
+#box2{
+    overflow: auto;
+}
+#box3{
+    overflow: hidden;
+}
+#box4{
+    overflow: scroll;
+}

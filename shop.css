@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    width: 70%;
+    height: auto;
+    background-color: rgb(238, 205, 211);
+    border: 1px solid red;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 10px auto;
+    overflow: auto;
+}
+.box{
+    height: 100px;
+    width: 100px;
+    
+    margin: 10px;
+    text-align: center;
+    /*vertical-align: middle;*/
+    font-size: large;
+}
+#box1{
+    float: left;
+    background-color: rgb(218, 218, 172);
+    border: 2px solid yellow;
+}
+#box2{
+    float: left;
+    background-color: rgb(156, 219, 156);
+    border: 2px solid green;
+    
+}
+#box3{
+    float: left;
+    background-color: rgb(233, 170, 170);
+    border: 2px solid red;
+    /*clear: left;*/
+    /*clear: right;*/
+}

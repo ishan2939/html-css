@@ -1,0 +1,18 @@
+a:link {
+    color: pink;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: yellow;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: green;
+  }
+  
+  /* selected link */
+  a:active {
+    color: lightcoral;
+  }

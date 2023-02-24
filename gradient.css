@@ -1,0 +1,6 @@
+.gre{
+    width: 500px;
+    height: 200px;
+    background-color: red;
+    background-image:  linear-gradient(bottom, pink purple);
+}
