@@ -1,0 +1,11 @@
+h1{
+    /* column-span: none; */
+    /* column-span:initial; */
+    /* column-span: all; */
+}
+div{
+    column-count: 3;
+    column-gap: 10px;
+    column-rule: 2px solid black;
+    column-fill: balance;
+}

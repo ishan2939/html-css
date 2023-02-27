@@ -1,0 +1,30 @@
+img{
+    /* apply radius to image */
+    /* border-radius: 50%;      */
+
+
+    /* apply opacity to image */
+    /* opacity: 0.5; */
+    
+
+    /* apply border to image */
+    /* border: 2px solid black;
+    padding: 10px; */
+
+
+    /* center an image */
+    /*display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;*/
+
+
+    /* apply different filters to image */
+    /*filter: blur(2px);
+    filter: grayscale(70%);
+    filter: saturate(9);*/
+
+
+    /* flip the image vertically 
+    transform: scaleX(-1);*/
+}

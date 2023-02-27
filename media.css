@@ -1,0 +1,29 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+div{
+    overflow: hidden;
+    background-color: rgb(206, 135, 173);
+}
+div a{
+    float: left;
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 22px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+div a:hover{
+    background-color: rgb(202, 82, 146);
+}
+@media only screen and (max-width: 600px){
+    div a{
+        float: none;
+        width: 100%;
+        padding: 20px 0;
+    }
+}
