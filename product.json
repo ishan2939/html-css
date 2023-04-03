@@ -1,0 +1,28 @@
+{
+    "products": [
+        {
+            "id": "1",
+            "image": "🧀",
+            "name": "cheese",
+            "price": "199"
+        },
+        {
+            "id": "2",
+            "image": "🥑",
+            "name": "avocado",
+            "price": "300"
+        },
+        {
+            "id": "3",
+            "image": "🍞",
+            "name": "bread",
+            "price": "19"
+        },
+        {
+            "id": "4",
+            "image": "🍅",
+            "name": "tomato",
+            "price": "30"
+        }
+    ]
+}
