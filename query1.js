@@ -1,0 +1,1 @@
+let date5 = new Date(`${new Date().toLocaleDateString()}, 07:00 PM`);console.log(new Date().toLocaleDateString());console.log(date5.toLocaleString());
