@@ -10,6 +10,7 @@ const products = JSON.parse(fs.readFileSync('../product.json'));
 
 app.post('/', (req, res) => {
     const id = products[products.length - 1].id + 1;
+    delete req.body.id;
     const obj = Object.assign({id: id}, req.body);
 
     products.push(obj);

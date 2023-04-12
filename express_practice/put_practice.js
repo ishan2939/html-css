@@ -8,7 +8,7 @@ const products = JSON.parse(fs.readFileSync('../product.json'));
 
 app.use(express.json());
 
-app.patch('/:id', (req, res) => {
+app.put('/:id', (req, res) => {
 
     if(req.params.id >= products.length){
         res.status(404).json({

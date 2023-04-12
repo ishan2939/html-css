@@ -1,0 +1,120 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-image: url('sunset-sunrise-ocean-nature-landscape_33099-2244.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 80%;
+    background-attachment: fixed;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px 20px;
+    text-transform: capitalize;
+}
+
+nav div{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 0.05rem;
+}
+nav ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 40px;
+    padding-right: 20px;
+    color: #fff;
+}
+
+nav ul li{
+    cursor: pointer;
+    padding: 8px 20px;
+}
+.active{
+    background-color: #fff;
+    color: #b34e8e;
+    border-radius: 35px;
+}
+.container .btn{
+    padding: 20px 40px;
+}
+
+.container .btn button{
+    border: 3px solid #fff;
+    outline: none;
+    background: transparent;
+    padding: 10px 40px;
+    font-size: 20px;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+    transition: .5s background-color,border-radius,color ease-in-out ;
+}
+
+.container .btn button:hover{
+    background-color: #fff;
+    color: #b34e8e;
+    border-radius: 30px;
+}
+.container .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .quote{
+    margin: 100px 0px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 60px 0px 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #5f1042;
+    border: 5px solid #fff;
+    max-width: 600px;
+    border-radius: 10px;
+    user-select: none;
+}
+.container .quote .icon{
+    position: absolute;
+    top: -35px;
+    background-color: #b34e8e;
+    padding: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #fff;
+    font-size: 20px;
+}
+
+.container .quote .data{
+    padding: 0px 30px;
+    text-align: center;
+    font-size: 17px;
+    line-height: 2rem;
+}
+
+.container .quote .data .person{
+    text-transform: capitalize;
+    margin-top: 30px;
+    text-align: end;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: .05rem;
+}
