@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="main.css" rel="stylesheet">
+    <link href="add_quote.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Poppins&family=Roboto&family=Shantell+Sans:wght@300&display=swap" rel="stylesheet">
@@ -14,11 +14,23 @@
     <nav>
         <div>Quote generator</div>
         <ul>
-            <li class="active">Quotes</li>
-            <li>Add quotes</li>
+            <li><a href="main.html">Quotes</a></li>
+            <li><a href="add_quote.html"  class="active">Add quotes</a></li>
         </ul>
     </nav>
     
+    <div class="formContainer">
+        <div class="title">Add Quote</div>
+        <form>
+            <label for="quote">Quote:</label><br />
+            <textarea rows="3" cols="15" placeholder="Add your quote here..."></textarea><br/>
+
+            <label for="quotee">Quotee:</label><br/>
+            <input type="text" placeholder="Add the quotee here..."><br/>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 
     <script src="main.js"></script>
 </body>
