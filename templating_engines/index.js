@@ -5,14 +5,20 @@ const router = require('./routes/router');
 
 const app = express();
 
-// app.use(express.json());
-app.set('view engine', 'pug');
+//for pug
+/* app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views', 'pug'));
 
-app.use(express.static(path.join(__dirname, 'views', 'normal')));
-app.use(express.urlencoded({
-    extended: true
-}));
+app.use(express.static(path.join(__dirname + '/views' + '/normal')));
+app.use(express.urlencoded({ extended: true })); */
+
+//for ejs
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views', 'ejs'));
+
+app.use(express.static(__dirname + '/views' + '/normal'));
+app.use(express.urlencoded({ extended: true }));
+
 
 // app.get('/', (req, res) => {
 //     res.status(200).render('home');
@@ -21,10 +27,10 @@ app.use(express.urlencoded({
 app.use('/', router);
 
 app.get('/', (req, res) => {
-    try{
+    try {
         throw new Error("hello1");
     }
-    catch(err){
+    catch (err) {
         res.send(err.message);
     }
 })
