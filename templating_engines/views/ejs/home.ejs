@@ -8,8 +8,8 @@
         <%- include('./includes/navbar.ejs') %>
 
             <div class="container">
-                <div class="btn">
-                    <button>Generate quote</button>
+                <div class="generate">
+                    <a href="/home">Generate quote</a>
                 </div>
                 <div class="content">
                     <div class="quote">
@@ -22,33 +22,11 @@
                                 </path>
                             </svg>
                         </div>
-                        <div class="data"></div>
+                        <div class="data"><%= quote %>
+                            <div class="person">~<%= person %></div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <script>
-                let btn = document.querySelector(".container .btn button");
-                let url = '/getQuote';
-                
-                async function callApi(url) {
-
-                    const response = await fetch(url);
-
-                    var data = await response.json();
-
-                    if(data.quote != undefined)
-                        document.querySelector('.content .quote .data').innerHTML = data.quote + '<div class="person">- ' + data.quotee + '</div>';
-                    else
-                    document.querySelector('.content .quote .data').innerHTML = 'There are no quotes in database please add them first.';
-                }
-                window.onload = () =>{
-                    callApi(url);
-                }
-
-                btn.addEventListener('click', () => {
-                    callApi(url);
-                });
-            </script>
-
-            <%- include('./includes/end.ejs') %>
+        <%- include('./includes/end.ejs') %>

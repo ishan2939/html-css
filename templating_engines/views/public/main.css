@@ -1,8 +1,8 @@
-.container .btn{
+.container .generate{
     padding: 20px 40px;
 }
 
-.container .btn button{
+.container .generate a{
     border: 3px solid #fff;
     outline: none;
     background: transparent;
@@ -12,10 +12,11 @@
     color: #fff;
     cursor: pointer;
     text-transform: capitalize;
+    text-decoration: none;
     transition: .5s background-color,border-radius,color ease-in-out ;
 }
 
-.container .btn button:hover{
+.container .generate a:hover{
     background-color: #fff;
     color: #b34e8e;
     border-radius: 30px;
@@ -37,7 +38,8 @@
     align-items: center;
     color: #5f1042;
     border: 5px solid #fff;
-    max-width: 600px;
+    width: 600px;
+    min-width: 400px;
     border-radius: 10px;
     user-select: none;
 }
