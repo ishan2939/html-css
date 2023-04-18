@@ -40,7 +40,10 @@ exports.get_all_quotes = (req, res) => {
         }
         else{
             res.render("get_all_quotes", {
-                quotes: JSON.parse(data)
+                quotes: JSON.parse(data),
+                hasQuotes: JSON.parse(data).length != 0 ? true : false,
+                path: '/getallquotes',
+                title: 'Get All Quotes'
             });
         }
     });

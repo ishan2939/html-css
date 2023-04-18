@@ -14,13 +14,13 @@ app.set('views', path.join(__dirname, 'views', 'pug')); */
 
 //for ejs
 
-/* app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views', 'ejs')); */
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views', 'ejs'));
 
 //for handlebars
 
-app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'views', 'handle_bars'));
+/* app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'views', 'handle_bars')); */
 
 
 

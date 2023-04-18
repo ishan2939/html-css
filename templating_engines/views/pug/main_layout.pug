@@ -9,16 +9,21 @@ html(lang="en")
         link(rel="preconnect", href="https://fonts.googleapis.com")
         link(rel="preconnect", href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Monoton&family=Poppins&family=Roboto&family=Shantell+Sans:wght@300&display=swap", rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Monoton&family=Poppins&family=Roboto&family=Sacramento&family=Shantell+Sans:wght@300&display=swap", rel="stylesheet")
         style   
             include ./../public/main_layout.css
         block style
 
     body 
         nav 
-            div Quote Generator 
+            div Quotes
+                span(style="color: #b34e8e") 4
+                span life
             ul 
                 li 
-                    a(href="/home", class=(path =='/home' ? 'active' : '')) Quotes
+                    a(href="/home", class=(path =='/home' ? 'active' : '')) Home
+                li 
+                    a(href="/getallquotes", class=(path =='/getallquotes' ? 'active' : '')) Quotes
                 li 
                     a(href="/addquote", class=(path =='/addquote' ? 'active' : '')) Add quotes
         

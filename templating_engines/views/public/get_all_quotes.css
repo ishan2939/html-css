@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0px auto;
+    margin: 30px auto;
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     padding: 50px 30px;
@@ -18,12 +18,14 @@
 }
 .quotecontainer ul li{
     margin: 20px 0px;
-    padding: 20px 40px;
+    padding: 25px 40px;
     background-color: #000;
     color: #fff;
-    border-radius: 7px;
     width: 100%;
     font-size: 18px;
+    outline: 3px solid #fff;
+    outline-offset: -10px;
+    border-radius: 7px;
 }
 .quotecontainer ul li svg{
     font-size: 20px;
@@ -41,9 +43,17 @@
 .quotecontainer ul li:nth-child(3n){
     background-image: radial-gradient(rgb(41, 161, 216), rgb(32,226,246));
 }
-
+.quotecontainer ul li .quote{
+    text-transform: capitalize;
+}
 .quotecontainer ul li .person{
     text-align: end;
+    text-transform: capitalize;
     margin-top: 10px;
+    font-size: 20px;
+
+}
+.quotecontainer .warning{
+    color: #fff;
     font-size: 20px;
 }
