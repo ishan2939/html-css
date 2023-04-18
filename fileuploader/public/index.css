@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+.outercontainer{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('bg.jpg');
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.outercontainer .warn{
+    color: rgb(71,125,117);
+    font-size: 20px;
+    margin: 20px 0px;    
+    font-weight: bold;
+}
+
+.container{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    max-height: 500px;
+}
+.container form{
+    width: 50%;
+    background-color: rgb(255,210,181);
+    color: rgb(71,125,117);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px 0px 20px;
+    border-radius: 15px;
+}
+.container form label{
+    width: 90%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px dashed rgb(71,125,117);
+    border-radius: 20px;
+    cursor: pointer;
+}
+.container form label svg{
+    font-size: 70px;
+    margin-bottom: 30px;
+}
+
+.container form input[type="file"]{
+    display: none;
+}
+.container form input[type="submit"]{
+    outline: none;
+    border: none;
+    font-size: 18px;
+    padding: 10px 40px;
+    background: none;
+    color: rgb(71,125,117);
+    border: 3px solid rgb(71,125,117);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .5s;
+}
+.container form input[type="submit"]:hover{
+    background-color: rgb(71,125,117);
+    color: #fff;
+}
+.container .image{
+    width: 50%;
+    background-color: rgb(240, 153, 126);
+    border-radius: 0px 15px 15px 0px;
+    display: flex;
+}
+.container .image img{
+    width: 80%;
+    max-height: 80%;
+    margin: auto;
+    object-fit: contain;
+    outline: 3px solid rgb(71,125,117);
+    outline-offset: 10px;
+    border-radius: 5px;
+}
+.double{
+    border-radius: 15px 0px 0px 15px !important;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File uploader</title>
+    <link href="./index.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Monoton&family=Poppins&family=Roboto&family=Shantell+Sans:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <div class="outercontainer">
+
+        <% if(msg != ''){ %>
+            <div class="warn"><%= msg %></div>
+        <% } %>
+        <div class="container">
+            <form action="/upload" method="POST" enctype="multipart/form-data" class="<%= filepath != '' ? 'double' : '' %>">
+                <label for="fileuploader">
+                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    Upload file here
+                </label>
+                <input type="file" id="fileuploader" name="uploadedimage" accept="image/*"><br/>
+                <input type="submit" value="Upload file"><br/>
+            </form>
+            <% if(filepath != '') { %>
+                <div class="image">
+                        <img src="http://localhost:3000/<%=filepath%>">
+                </div>
+            <% } %>
+        </div>
+    </div>
+    <script>
+        let fileInput = document.querySelector('input[type="file"]');
+        let filelabel = document.querySelector('form label');
+
+        fileInput.addEventListener('change', () => {
+            if(fileInput.files.length != 0)
+                filelabel.innerHTML = fileInput.files[0].name;
+            else
+                filelabel.innerHTML = '<svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>Upload file here';
+        });
+    </script>
+</body>
+</html>
