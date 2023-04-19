@@ -10,44 +10,51 @@ body{
     background-size: cover;
     background-position: 50% 80%;
     background-attachment: fixed;
-    /* max-width: 100vw;
-    max-height: 100vh; */
 }
 
+/*-----------navbar---------*/
+
 nav {
+    padding: 50px 20px;
+    text-transform: capitalize;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 50px 20px;
-    text-transform: capitalize;
 }
+
+/*-----------navbar quotes logo container---------*/
 
 nav div{
     font-family: 'Sacramento', cursive;
-    color: #fff;
     font-size: 40px;
     font-weight: 900;
     letter-spacing: 0.05rem;
+    color: #fff;
 }
+
 nav ul{
     list-style-type: none;
+    padding-right: 20px;
+    column-gap: 40px;
+    color: #fff;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    column-gap: 40px;
-    padding-right: 20px;
-    color: #fff;
 }
 
 nav ul li{
     cursor: pointer;
 }
+
 nav ul li a{
-    text-decoration: none;
-    color: #fff;
     padding: 8px 20px;
+    color: #fff;
+    text-decoration: none;
 }
+
+/*-----------To show which menu you are on---------*/
+
 .active{
     background-color: #fff;
     color: #b34e8e;

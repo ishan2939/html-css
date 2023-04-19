@@ -6,22 +6,22 @@ const router = require('./routes/router');
 const app = express();
 
 
-
 //for pug
 
 /* app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views', 'pug')); */
+
 
 //for ejs
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views', 'ejs'));
 
+
 //for handlebars
 
 /* app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views', 'handle_bars')); */
-
 
 
 app.use(express.static(path.join(__dirname + '/views' + '/public')));

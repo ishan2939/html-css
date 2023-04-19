@@ -95,29 +95,3 @@ exports.get_add_quote_page = (req, res) => {
         title: "Add quote"
     });
 };
-
-// exports.generateRandomQuote = (req, res) => {
-//     fs.readFile(p, 'utf-8', (err, data) => {
-//         if (err){
-//              res.render("error",{
-//                 title: "404",
-//                 error_code: "404",
-//                 error_message : "We can't seem to find the page that you're looking for."
-//             });
-//             // res.send(err);
-//         }
-//         else {
-//             quotes = JSON.parse(data);
-//             if (quotes.length == 0)
-//                 return res.send({});
-//             let index = Math.floor(Math.random() * quotes.length);
-//             // res.send(quotes[index]);
-//             res.render("home", {
-//                 path: "/home",
-//                 title: "Home",
-//                 quote: quotes[index].quote,
-//                 person: quotes[index].quotee
-//             });
-//         }
-//     });
-// }

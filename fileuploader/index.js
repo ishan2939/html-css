@@ -33,6 +33,7 @@ function checkFileType(file, cb){
     }
 
 }
+
 const app = express();
 
 app.set('view engine', 'ejs');
