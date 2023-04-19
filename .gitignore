@@ -1,6 +1,7 @@
 /express_practice/node_modules
 /foodmarket/node_modules
 .vscode
-error_handling/node_modules
-file_handling/node_modules
-templating_engines/node_modules
+/error_handling/node_modules
+/file_handling/node_modules
+/templating_engines/node_modules
+/fileuploader/node_modules
