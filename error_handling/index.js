@@ -2,7 +2,6 @@ const express = require('express');
 const joi = require('joi');
 
 const showError = require('./controllers/errorhandler');
-const foo = require('./middleware');
 const errorHandler2 = require('./utils/errohandler2');
 const app = express();
 
@@ -24,13 +23,11 @@ app.get('/', (req, res, next) => {
         }
     }
     catch (err) {
-        //res.send("hello");
         next(err);
     }
 });
 
 app.use('/', showError);
-//app.use(foo);
 
 
 /*second way

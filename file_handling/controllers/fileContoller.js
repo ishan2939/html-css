@@ -1,22 +1,20 @@
 const fs = require('fs');
 
 exports.createFile = (req, res) => {
-    fs.exists(req.body.fileName, (exist) => {
-        if (!exist) {
-
-            fs.writeFile(req.body.fileName, req.body.data || "", (err) => {
-                if (err)
-                    res.status(400).send("Not able to create File for some reason");
-                else
-                    res.status(200).send("File Created successfully.")
-            });
-        }
-        else
-            res.status(400).send({
-                "status": "Bad request",
-                "Error": "File already exist. Please enter unique filename."
-            });
-    })
+    const exists = fs.existsSync(req.body.fileName);
+    if (!exists) {
+        fs.writeFile(req.body.fileName, req.body.data || "", (err) => {
+            if (err)
+                res.status(400).send("Not able to create File for some reason");
+            else
+                res.status(200).send("File Created successfully.")
+        });
+    }
+    else
+        res.status(400).send({
+            "status": "Bad request",
+            "Error": "File already exist. Please enter unique filename."
+        });
 };
 
 exports.readFromFile = (req, res) => {
