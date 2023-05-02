@@ -1,0 +1,1 @@
+NodeJS is a javascript runtime built on google V8 js engine. Node.js is a cross-platform, open-source server environment that can run on Windows, Linux, Unix, macOS, and more. Node.js is a cross-platform, open-source server environment that can run on Windows, Linux, Unix, macOS, and more.

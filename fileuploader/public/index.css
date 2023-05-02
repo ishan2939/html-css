@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*-----------outer container for everything---------*/
+
+.outercontainer{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('bg.jpg');
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*-----------container to show warning---------*/
+
+.outercontainer .warn{
+    margin: 20px 0px;    
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(71,125,117);
+}
+
+/*-----------container---------*/
+
+.container{
+    width: 50%;
+    max-height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+/*-----------form---------*/
+
+.container form{
+    width: 50%;
+    padding: 40px 20px 0px 20px;
+    background-color: rgb(255,210,181);
+    border-radius: 15px;
+    color: rgb(71,125,117);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container form label{
+    width: 90%;
+    height: 300px;
+    border: 3px dashed rgb(71,125,117);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container form label svg{
+    margin-bottom: 30px;
+    font-size: 4rem;
+}
+
+.container form input[type="file"]{
+    display: none;
+}
+
+.container form input[type="submit"]{
+    padding: 10px 40px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background: none;
+    color: rgb(71,125,117);
+    border: 3px solid rgb(71,125,117);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.container form input[type="submit"]:hover{
+    background-color: rgb(71,125,117);
+    color: #fff;
+}
+
+/*-----------container to show uploaded image---------*/
+
+.container .image{
+    width: 50%;
+    background-color: rgb(240, 153, 126);
+    border-radius: 0px 15px 15px 0px;
+    display: flex;
+}
+
+.container .image img{
+    width: 80%;
+    max-height: 80%;
+    margin: auto;
+    border-radius: 5px;
+    outline: 3px solid rgb(71,125,117);
+    outline-offset: 10px;
+    object-fit: contain;
+}
+
+/*-----------if image container is visible then arrange border-radius of form accordingly---------*/
+
+.double{
+    border-radius: 15px 0px 0px 15px !important;
+}
