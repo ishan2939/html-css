@@ -1,0 +1,31 @@
+<html>
+
+<body>
+
+    <form action="#" class="form" onsubmit="submitform(event)">
+        <label for="appt">Select a time:</label>
+        <input type="time" id="appt" name="appt">
+        <input type="submit">
+    </form>
+    <script>
+
+        let x = document.getElementsByClassName('form');
+        function submitform(e) {
+            e.preventDefault();
+            /* const arr = document.getElementById('appt').value.split(':');
+            console.log(arr);
+            const d= new Date((arr[0]*60*60)+(arr[1]*60)*1000);
+            console.log(d); */
+            let today = new Date()
+            let time = document.getElementById('appt').value;
+            time = new Date('1970-01-01' + ' ' + time + 'Z').getTime();
+            var date = today.setHours(0, 0, 0, 0);
+            var DateTime = new Date(date + time);
+            let final = new Date(DateTime.toLocaleString('en-US',{timeZone: 'Europe/Berlin'}));
+            console.log(final);
+        }
+    </script>
+
+</body>
+
+</html>
