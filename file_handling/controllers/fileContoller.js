@@ -1,6 +1,12 @@
 const fs = require('fs');
 
 exports.createFile = (req, res) => {
+    if(!req.body.fileName){
+        res.status(400).send({
+            "status": "Bad request",
+            "Error": "Not sufficient data provided."
+        });
+    }
     const exists = fs.existsSync(req.body.fileName);
     if (!exists) {
         fs.writeFile(req.body.fileName, req.body.data || "", (err) => {
@@ -18,6 +24,12 @@ exports.createFile = (req, res) => {
 };
 
 exports.readFromFile = (req, res) => {
+    if(!req.query.fileName){
+        res.status(400).send({
+            "status": "Bad request",
+            "Error": "Not sufficient data provided."
+        });
+    }
     fs.readFile(req.query.fileName, 'utf-8', (err, data) => {
         if (err) {
             res.status(400).send({
@@ -35,6 +47,12 @@ exports.readFromFile = (req, res) => {
 };
 
 exports.writeIntoFile = (req, res) => {
+    if(!req.body.fileName){
+        res.status(400).send({
+            "status": "Bad request",
+            "Error": "Not sufficient data provided."
+        });
+    }
     fs.writeFile(req.body.fileName, req.body.data || "", (err) => {
         if (err)
             res.status(400).send({
@@ -47,6 +65,12 @@ exports.writeIntoFile = (req, res) => {
 };
 
 exports.appendIntoFile = (req, res) => {
+    if(!req.body.fileName){
+        res.status(400).send({
+            "status": "Bad request",
+            "Error": "Not sufficient data provided."
+        });
+    }
     fs.appendFile(req.body.fileName, req.body.data || "", (err) => {
         if (err)
             res.status(400).send({

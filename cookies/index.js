@@ -14,7 +14,6 @@ app.use(
     })
 );
 
-
 app.use(cors({
     origin: '*',
     methods: ['GET', 'POST']
@@ -76,6 +75,7 @@ app.get('/logout', (req, res) => {
     res.clearCookie("username");
     return res.redirect('/login');
 })
+
 //normal cookie operations
 /*
 app.get('/', (req,res) => {

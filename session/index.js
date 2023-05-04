@@ -22,7 +22,7 @@ const username = 'harkhanishan';
 const password = '12345';
 
 app.get('/', (req,res) => {
-    let session = req.session;S
+    let session = req.session;
     if(session.userid){
         res.status(200).send(`<h1>Hey there, welcome <a href=\'/logout'>click to logout</a></h1>`);
     }
