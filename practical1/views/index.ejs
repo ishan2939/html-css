@@ -20,13 +20,24 @@
             <input type="time" id="time" name="time" required>
 
             <label for="zones">Choose a timezone</label>
-            <select name="zone" id="zones" required>
-                <option value="Asia/Shanghai">Asia/Shanghai</option>
-                <option value="America/New_York">America/New_York</option>
-                <option value="Australia/Sydney">Australia/Sydney</option>
-                <option value="Canada/Pacific">Canada/Pacific</option>
-                <option value="Europe/Berlin">Europe/Berlin</option>
-            </select>
+            <div class="zoneContainer">
+                <div class="fromText">From</div>
+                <select name="zone" id="zones" required>
+                    <option value="Asia/Shanghai">Asia/Shanghai</option>
+                    <option value="America/New_York">America/New_York</option>
+                    <option value="Australia/Sydney">Australia/Sydney</option>
+                    <option value="Canada/Pacific">Canada/Pacific</option>
+                    <option value="Europe/Berlin">Europe/Berlin</option>
+                </select>
+                <div class="toText">To</div>
+                <select name="zone" id="zones" required>
+                    <option value="Asia/Shanghai">Asia/Shanghai</option>
+                    <option value="America/New_York">America/New_York</option>
+                    <option value="Australia/Sydney">Australia/Sydney</option>
+                    <option value="Canada/Pacific">Canada/Pacific</option>
+                    <option value="Europe/Berlin">Europe/Berlin</option>
+                </select>
+            </div>
             <input type="submit" value="convert">
         </form>
 
