@@ -1,6 +1,12 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+const path = require('path');
+
+const dotenv = require('dotenv');
+
+dotenv.config({path: path.join(__dirname, 'config', '.env')});
+
 const User = require('../model/user');
 
 exports.login = async (req, res) => {
@@ -18,8 +24,8 @@ exports.login = async (req, res) => {
 
                 const token = jwt.sign(
                     { user_id: userExists._id, email },
-                    "JSJSJS",
-                    { expiresIn: "2h" }
+                    process.env.SECRET_KEY,
+                    { expiresIn: "2d" }
                 )
     
                 userExists.token = token;

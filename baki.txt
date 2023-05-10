@@ -1,4 +1,4 @@
-session keys environment
-jwt expire time
 error handling ma email and password validation
 practical ma timezone aapi de
+file handling streaming
+practical 2 ma refactoring

@@ -1,4 +1,9 @@
 const jwt = require('jsonwebtoken');
+const path = require('path');
+
+const dotenv = require('dotenv');
+
+dotenv.config({path: path.join(__dirname, 'config', '.env')});
 
 const verify = (req, res, next) => {
     const token = req.body.token || req.query.token || req.headers["x-access-token"];
@@ -8,7 +13,7 @@ const verify = (req, res, next) => {
     }
 
     try{
-        const decoded = jwt.verify(token, "JSJSJS");
+        const decoded = jwt.verify(token, process.env.SECRET_KEY);
         req.user = decoded;
     }
     catch(err){

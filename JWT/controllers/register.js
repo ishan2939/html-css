@@ -2,7 +2,14 @@ const User = require('../model/user');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
+const path = require('path');
+
+const dotenv = require('dotenv');
+
+dotenv.config({path: path.join(__dirname, 'config', '.env')});
+
 exports.register = async (req, res) => {
+    //console.log(process.env.SECRET_KEY);
 
     try{
         const {name, email, password, role} = req.body;
@@ -27,7 +34,7 @@ exports.register = async (req, res) => {
 
         const token = jwt.sign(
             {user_id : user._id, email},
-            'JSJSJS',
+            process.env.SECRET_KEY,
             {
                 expiresIn: "2h"
             }
