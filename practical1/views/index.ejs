@@ -37,11 +37,11 @@
             <input type="submit" value="convert">
         </form>
 
-        <% if(timeZone && addedTime && convertedTime) { %>
+        <% if(zoneTo && zoneFrom && addedTime && convertedTime) { %>
             <div class="result">
 
                 <div class="resultContainer">
-                    <div class="date">IST</div>
+                    <div class="date"><%= zoneFrom %></div>
                     <div class="time">
                         <%= addedTime %>
                     </div>
@@ -54,7 +54,7 @@
                 </svg>
                 <div class="resultContainer">
                     <div class="date">
-                        <%= timeZone %>
+                        <%= zoneTo %>
                     </div>
                     <div class="time">
                         <%= convertedTime %>

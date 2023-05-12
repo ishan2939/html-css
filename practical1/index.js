@@ -10,6 +10,15 @@ app.set('views', path.join(__dirname + '/views'));
 app.use(express.static(path.join(__dirname + '/public')))
 app.use(express.urlencoded({ extended: true }));
 
+function convertToHourMinute(str){
+    console.log(str);
+    let hour =  parseInt(str.split(':')[0]);
+    let minute = parseInt(str.split(':')[1]);
+    return {
+        hour: hour?hour:0,
+        minute: minute?minute:0
+    }
+}
 app.get('/', (req, res) => {
     fs.readFile('data.json', 'utf-8', (err, data) => {
         if (err)
@@ -18,7 +27,8 @@ app.get('/', (req, res) => {
         res.render('index', {
             addedTime: "",
             convertedTime: "",
-            timeZone: "",
+            zoneFrom: "",
+            zoneTo: "",
             zones: JSON.parse(data)
         });
     });
@@ -26,39 +36,35 @@ app.get('/', (req, res) => {
 
 app.post('/convert', (req, res) => {
 
-    let today = new Date();
-    //let timeFrom = new Date(today.getFullYear, today.getMonth(), today.getDate(), req.body.time.spilt)
-    console.log(req.body.zoneFrom);
-    let timeFromOffset = today.toLocaleTimeString('en-US', {timeZone: req.body.zoneFrom});
+    const sourceTimezone = req.body.zoneFrom;
+    const sourceDate = new Date("2023-05-12T"+req.body.time+":00Z");
     
-    //     let today = new Date();
-    //     let time = new Date(today.getFullYear(), today.getMonth(), today.getDate(), req.body.time.split(':')[0], req.body.time.split(':')[1]);
-    //     //console.log(time);
-    //     //let timeFrom = new Date(req.body.time).toLocaleString('en-US', {timeZone: ''});
-    //     let final = time.toLocaleString('en-US', { timeZone: req.body.zoneFrom });
-    //     // console.log(new Date(new Date(final).setHours(req.body.time.split(':')[0])))
-    //     //let final = 
-    //     // console.log(final, timeFrom);
-    //     let x = new Date(final);
+    const destinationTimezone = req.body.zoneTo;
+    
+    const utcTime = sourceDate.getTime() + (sourceDate.getTimezoneOffset() * 60000);
+    
+    const sourceOffset = convertToHourMinute(sourceDate.toLocaleTimeString('en-us', { timeZoneName: 'short', timeZone: req.body.zoneFrom }).split(' ')[2].slice(3));
+    const destinationOffset = convertToHourMinute(sourceDate.toLocaleTimeString('en-us', { timeZoneName: 'short', timeZone: req.body.zoneTo }).split(' ')[2].slice(3));
 
+    const offsetDifferenceHour =  destinationOffset.hour - sourceOffset.hour;
+    
+    const offsetDifferenceMinute = destinationOffset.minute - sourceOffset.minute;
 
-    // var d = new Date();
-    // d.setTime( d.getTime() + d.getTimezoneOffset()*60*1000 );
-    //console.log(d);
+    const totalConversion = (offsetDifferenceHour * 3600000) + (offsetDifferenceMinute * 60000);
+    console.log(sourceOffset, destinationOffset);
+    const sourceTime = new Date(utcTime).toLocaleString('en-us');
+    const destinationTime = new Date(utcTime + totalConversion).toLocaleString('en-us');
 
     fs.readFile('data.json', 'utf-8', (err, data) => {
         if (err)
             return console.log(err.message);
 
         res.render('index', {
-            // addedTime: time.toLocaleString('en-US'),
-            // convertedTime: final,
-            // timeZone: req.body.zone,
-            addedTime: "",
-            convertedTime: "",
-            timeZone: "",
+            zoneFrom: sourceTimezone,
+            zoneTo: destinationTimezone,
+            addedTime: sourceTime,
+            convertedTime: destinationTime,
             zones: JSON.parse(data)
-
         });
     });
 });

@@ -4,32 +4,37 @@ const path = require('path');
 
 
 const storage = multer.diskStorage({
-    destination: './assests',
-    filename:  function(req, file, cb){
+
+    destination: './assests',   //destination to store images
+    filename: function (req, file, cb) { //filename that we want to keep
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
     }
+
 });
 
 const upload = multer({
-    storage: storage,
-    limits:{fileSize: 1000000},
-    fileFilter: function(req, file, cb){
+
+    storage: storage,   //handle storage part
+    limits: { fileSize: 1000000 }, //limit of file
+    fileFilter: function (req, file, cb) {    //file filter validations
         checkFileType(file, cb);
     }
-}).single('uploadedimage');
 
-function checkFileType(file, cb){
-    const fileTypes = '.jpeg.jpg.png.gif';
+}).single('uploadedimage'); //only one file is allowed
 
-    const extname = fileTypes.includes(path.extname(file.originalname).toLowerCase());
+function checkFileType(file, cb) {
 
-    const mimetype = fileTypes.includes(file.mimetype.split('/')[1]);
+    const fileTypes = '.jpeg.jpg.png.gif'; //allowed formats
 
-    if(extname && mimetype){
-        return cb(null, true);
+    const extname = fileTypes.includes(path.extname(file.originalname).toLowerCase()); //extension name
+
+    const mimetype = fileTypes.includes(file.mimetype.split('/')[1]);   //mime type
+
+    if (extname && mimetype) { //if they follow validations
+        return cb(null, true); //pass error as null and accept file by passing true
     }
-    else{
-        cb("Error: Only image files are allowed");
+    else {
+        cb("Error: Only image files are allowed"); //else pass error
     }
 
 }
@@ -41,37 +46,43 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'assests')));
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res)  => {
-    res.render('home',{
+app.get('/', (req, res) => {
+
+    res.render('home', { //render home page
         msg: '',
-        filepath : ''
+        filepath: ''
     });
+
 });
 
 app.post('/upload', (req, res) => {
-    upload(req, res, (err) => {
-        if(err){
-            res.render('home', {
+    upload(req, res, (err) => { //call upload
+
+        if (err) {  //if error exists
+            res.render('home', {    //render home page with error
                 msg: err,
                 filepath: ''
             })
         }
-        else{
-            if(req.file == undefined){
-                res.render('home', {
+        else {
+
+            if (req.file == undefined) {    //if file doesn't exists
+                res.render('home', {    //render home page with error
                     msg: 'Error: No files selected',
                     filepath: ''
                 })
             }
-            else{
-                res.render('home', {
+            else {  //else if everything is fine
+                res.render('home', {    //render home page with message
                     msg: 'File successfully uploaded.',
                     filepath: `${req.file.filename}`
                 })
             }
+
         }
+
     });
 });
 

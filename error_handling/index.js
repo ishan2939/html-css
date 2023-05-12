@@ -1,17 +1,21 @@
 const express = require('express');
 const joi = require('joi');
 
-const showError = require('./controllers/errorhandler');
-const errorHandler2 = require('./utils/errohandler2');
+require('./config/database').connect_to_DB();
+const controller = require('./controllers/controllers');
+const middleware = require('./utils/middleware');
+
 const app = express();
 
 app.use(express.json());
 
-const getVariable = () => {
+/*const getVariable = () => {
     return undefined;   
-};
+};*/
 
 
+//simple example (normal one)
+/*
 app.get('/', (req, res, next) => {
     let user = getVariable();
     try {
@@ -27,10 +31,13 @@ app.get('/', (req, res, next) => {
     }
 });
 
-app.use('/', showError);
+app.use('/', middleware.showError);
+*/
 
 
-/*second way
+
+//second way(using middleware)
+/*
 app.get('/', errorHandler2 (async (req,res) => {
     let user = getVariable();
     if(user){
@@ -41,22 +48,31 @@ app.get('/', errorHandler2 (async (req,res) => {
     }
 }));
 
-app.use('/', showError);
+app.use('/', middleware.showError);
 */
 
-// const schema = joi.object({
-//     userId: joi.number().required()
-// });
 
-// app.post('/', errorHandler2(async (req, res) => {
-//     const {error, value} = schema.validate({});
+//third way(using joi)
+/* 
+const schema = joi.object({
+    userId: joi.number().required()
+});
 
-//     if(error){
-//         throw new Error("UserID required");
-//     }
-// }));
+app.post('/', errorHandler2(async (req, res) => {
+    const {error, value} = schema.validate({});
 
-// app.use('/', showError);
+    if(error){
+        throw new Error("UserID required");
+    }
+}));
+
+app.use('/', middleware.showError);
+*/
+
+
+//fourth way (manually handeled signup/login)
+app.post('/signup', middleware.validateData, controller.signup);
+app.post('/login', middleware.validateData, controller.login);
 
 app.listen(3000, () => {
     console.log("Server started at port 3000...");

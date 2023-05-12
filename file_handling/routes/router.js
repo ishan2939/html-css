@@ -12,4 +12,8 @@ router.route('/writefile').post(fileController.writeIntoFile);
 
 router.route('/updatefile').patch(fileController.appendIntoFile);
 
+router.route('/readstream').get(fileController.streamRead);
+
+router.route('/writestream').post(fileController.streamWrite);
+
 module.exports = router;

@@ -7,6 +7,8 @@ const app = express();
 
 //app.use(helmet());
 
+
+//usage of helmet
 app.use(
     helmet({
         referrerPolicy: { policy: "no-referrer" },
@@ -14,6 +16,7 @@ app.use(
     })
 );
 
+//usage of cors
 app.use(cors({
     origin: '*',
     methods: ['GET', 'POST']
@@ -34,45 +37,45 @@ const userCredentials = {
     "password": '12345678'
 }
 
-app.get('/welcome', (req, res) => {
-    let username = req.cookies.username;
+app.get('/welcome', (req, res) => { //welcome page
+    let username = req.cookies.username;    //get username from cookie
 
     return res.render('welcome', { username });
 });
 
 app.get('/', (req, res) => {
-    let username = req.cookies['username'];
+    let username = req.cookies['username']; //get username from cookie
 
     return res.render('home', { username });
 });
 
 app.get('/login', (req, res) => {
-    let warn = req.query.msg ? true : false;
+    let warn = req.query.msg ? true : false;    //check if there is any error
 
     if (warn) {
         return res.render('login', {
-            error: "Invalid credentials"
+            error: "Invalid credentials"    //then pass error
         });
     }
     else {
-        res.render('login');
+        res.render('login');    //else don't pass error
     }
 });
 
 app.post('/login', (req, res) => {
     let { username, password } = req.body;
 
-    if (username === userCredentials.username && password === userCredentials.password) {
-        res.cookie("username", username);
+    if (username === userCredentials.username && password === userCredentials.password) {   //check if credentials are right
+        res.cookie("username", username);   //set the cookie
         return res.redirect('/');
     }
     else {
-        return res.redirect('/login?msg=failed');
+        return res.redirect('/login?msg=failed');   //if credentials are not right then show error
     }
 });
 
-app.get('/logout', (req, res) => {
-    res.clearCookie("username");
+app.get('/logout', (req, res) => {  //logout
+    res.clearCookie("username");    //delete the cookie
     return res.redirect('/login');
 })
 
