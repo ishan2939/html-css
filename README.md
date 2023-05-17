@@ -1,2 +1,2 @@
-# html-css
-my practice for html/css
+# prcatice
+my practice for all courses
