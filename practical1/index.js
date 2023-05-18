@@ -10,13 +10,17 @@ app.set('views', path.join(__dirname + '/views'));
 app.use(express.static(path.join(__dirname + '/public')))
 app.use(express.urlencoded({ extended: true }));
 
-function convertToHourMinute(str){
-    console.log(str);
-    let hour =  parseInt(str.split(':')[0]);
-    let minute = parseInt(str.split(':')[1]);
+function convertToHourMinute(str) {
+    let hour = parseInt(str.split(':')[0]); //get hours
+    let minute = parseInt(str.split(':')[1]);   //get minutes
+
+    if(str[0]=='-'){    //convert minutes to minus if offset is in minus
+        minute = parseInt(minute>0 ? '-' + minute : '' + minute)
+    }
+
     return {
-        hour: hour?hour:0,
-        minute: minute?minute:0
+        hour: hour ? hour : 0,
+        minute: minute ? minute : 0
     }
 }
 app.get('/', (req, res) => {
@@ -36,24 +40,34 @@ app.get('/', (req, res) => {
 
 app.post('/convert', (req, res) => {
 
-    const sourceTimezone = req.body.zoneFrom;
-    const sourceDate = new Date("2023-05-12T"+req.body.time+":00Z");
+    const today = new Date();   //get today
+    let month = today.getMonth(), date = today.getDate(), year = today.getFullYear();   //get month, year, date
     
-    const destinationTimezone = req.body.zoneTo;
-    
-    const utcTime = sourceDate.getTime() + (sourceDate.getTimezoneOffset() * 60000);
-    
-    const sourceOffset = convertToHourMinute(sourceDate.toLocaleTimeString('en-us', { timeZoneName: 'short', timeZone: req.body.zoneFrom }).split(' ')[2].slice(3));
-    const destinationOffset = convertToHourMinute(sourceDate.toLocaleTimeString('en-us', { timeZoneName: 'short', timeZone: req.body.zoneTo }).split(' ')[2].slice(3));
+    //convert month and date to 2 digit format
+    month = (month < 10) ? ('0' + month) : ('' + month);
+    date = (date < 10) ? ('0' + date) : ('' + date);
 
-    const offsetDifferenceHour =  destinationOffset.hour - sourceOffset.hour;
+    const sourceTimezone = req.body.zoneFrom;   //get entered timezone
+    const sourceDate = new Date(`${year}-${month}-${date}T${req.body.time}:00Z`);   //get entered source date
+
+    const destinationTimezone = req.body.zoneTo;    //get destination timezone
+
+    const utcTime = sourceDate.getTime() + (sourceDate.getTimezoneOffset() * 60000);    //get UTC time
+
+    //get source and destination offsets
+    const sourceOffset = convertToHourMinute(sourceDate.toLocaleTimeString('en-us', { timeZoneName: 'short', timeZone: sourceTimezone }).split(' ')[2].slice(3));
+    const destinationOffset = convertToHourMinute(sourceDate.toLocaleTimeString('en-us', { timeZoneName: 'short', timeZone: destinationTimezone }).split(' ')[2].slice(3));
     
+    //get difference in hour and minutes
+    const offsetDifferenceHour = destinationOffset.hour - sourceOffset.hour;
+
     const offsetDifferenceMinute = destinationOffset.minute - sourceOffset.minute;
 
+    //find the total conversion needed in milliseconds
     const totalConversion = (offsetDifferenceHour * 3600000) + (offsetDifferenceMinute * 60000);
-    console.log(sourceOffset, destinationOffset);
-    const sourceTime = new Date(utcTime).toLocaleString('en-us');
-    const destinationTime = new Date(utcTime + totalConversion).toLocaleString('en-us');
+    
+    const sourceTime = new Date(utcTime).toLocaleString('en-us');   //get sourcetime for better user experience
+    const destinationTime = new Date(utcTime + totalConversion).toLocaleString('en-us');    //get answer
 
     fs.readFile('data.json', 'utf-8', (err, data) => {
         if (err)
