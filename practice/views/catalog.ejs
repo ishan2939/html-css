@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="http://localhost:3000/catalog.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="header">
+                Catalog
+            </div>
+            <div class="body">
+                <% for(let r of response) { %>
+                    <div class="category">
+                        <%= r.category %>
+                    </div>
+                    <div class="products">
+                        <ul>
+                            <% for(let p of r.products) {%>
+                                <li>
+                                    <a href="/product/<%= p.name %>">
+
+                                        <div class="image">
+                                            <div class="icon">
+                                                <%= p.icon %>
+                                            </div>
+                                        </div>
+                                        <div class="details">
+                                            <div class="name">
+                                                <%= p.name %>
+                                            </div>
+                                            <div class="price">
+                                                $<%= p.price %>
+                                                <svg stroke="#eeca89" fill="#eeca89" stroke-width="0"
+                                                viewBox="0 0 256 512" height="1em" width="1em"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z">
+                                                </path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            <%}%>
+                        </ul>
+                    </div>
+                    <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

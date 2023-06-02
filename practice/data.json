@@ -7,17 +7,10 @@
         "quantity": "3 🥖",
         "price": 12,
         "organic": true,
-        "description": "Bread is a staple food prepared from a dough of flour (usually wheat) and water, usually by baking. Throughout recorded history and around the world, it has been an important part of many cultures' diet. It is one of the oldest human-made foods, having been of significance since the dawn of agriculture, and plays an essential role in both religious rituals and secular culture."
-    },
-    {
-        "productName": "Fresh Avocados",
-        "image": "🥑",
-        "from": "Spain",
-        "nutrients": "Vitamin B, Vitamin K",
-        "quantity": "4 🥑",
-        "price": 6.5,
-        "organic": true,
-        "description": "A ripe avocado yields to gentle pressure when held in the palm of the hand and squeezed. The fruit is not sweet, but distinctly and subtly flavored, with smooth texture. The avocado is popular in vegetarian cuisine as a substitute for meats in sandwiches and salads because of its high fat content. Generally, avocado is served raw, though some cultivars, including the common 'Hass', can be cooked for a short time without becoming bitter. It is used as the base for the Mexican dip known as guacamole, as well as a spread on corn tortillas or toast, served with spices."
+        "description": "Bread is a staple food...",
+        "type": "veg",
+        "category": "grains",
+        "totalQuantity": 54
     },
     {
         "productName": "Goat and Sheep Cheese",
@@ -27,7 +20,10 @@
         "quantity": "250g",
         "price": 5,
         "organic": false,
-        "description": "Creamy and distinct in flavor, goat cheese is a dairy product enjoyed around the world. Goat cheese comes in a wide variety of flavors and textures, from soft and spreadable fresh cheese to salty, crumbly aged cheese. Although it’s made using the same coagulation and separation process as cheese made from cow’s milk, goat cheese differs in nutrient content."
+        "description": "Creamy and distinct...",
+        "type": "non-veg",
+        "category": "dairy",
+        "totalQuantity": 52
     },
     {
         "productName": "Apollo Broccoli",
@@ -37,7 +33,10 @@
         "quantity": "15 🥦",
         "price": 5.5,
         "organic": true,
-        "description": "Broccoli is known to be a hearty and tasty vegetable which is rich in dozens of nutrients. It is said to pack the most nutritional punch of any vegetable. When we think about green vegetables to include in our diet, broccoli is one of the foremost veggies to come to our mind. Broccoli is a cruciferous vegetable and part of the cabbage family, which includes vegetables such as Brussel sprouts and kale. Although the tastes are different, broccoli and these other vegetables are from the same family."
+        "description": "Broccoli is known to be...",
+        "type": "veg",
+        "category": "vegetables",
+        "totalQuantity": 34
     },
     {
         "productName": "Baby Carrots",
@@ -47,7 +46,10 @@
         "quantity": "20 🥕",
         "price": 3,
         "organic": true,
-        "description": "The carrot is a root vegetable that is often claimed to be the perfect health food. It is crunchy, tasty and highly nutritious. Carrots are a particularly good source of beta-carotene, fiber, vitamin K, potassium and antioxidants. Carrots have a number of health benefits. They are a weight loss friendly food and have been linked to lower cholesterol levels and improved eye health."
+        "description": "The carrot is a root...",
+        "type": "veg",
+        "category": "vegetables",
+        "totalQuantity": 65
     },
     {
         "productName": "Sweet Corncobs",
@@ -57,17 +59,23 @@
         "quantity": "2 🌽",
         "price": 2,
         "organic": false,
-        "description": "Also known as maize, corn is one of the most popular cereal grains in the world. Popcorn and sweet corn are commonly eaten varieties, but refined corn products are also widely consumed, frequently as ingredients in foods. These include tortillas, tortilla chips, polenta, cornmeal, corn flour, corn syrup, and corn oil. Whole-grain corn is as healthy as any cereal grain, rich in fiber and many vitamins, minerals, and antioxidants."
+        "description": "Also known as maize...",
+        "type": "veg",
+        "category": "grains",
+        "totalQuantity": 37
     },
     {
         "productName": "Tomato",
         "image": "🍅",
         "from": "Spain",
-        "nutrients": "Vitamin C, Vitamin A Magnesium",
+        "nutrients": "Vitamin C, Vitamin A, Magnesium",
         "quantity": "5 🍅",
         "price": 8,
         "organic": true,
-        "description": "Tomato is a popular fruit that is commonly used as a vegetable in culinary applications. It has a vibrant red color, a juicy texture, and a slightly sweet and tangy flavor. With their widespread availability and culinary versatility, tomatoes are a staple ingredient in many cuisines around the world."
+        "description": "Tomato is a popular...",
+        "type": "veg",
+        "category": "fruits",
+        "totalQuantity": 84
     },
     {
         "productName": "Apple",
@@ -77,7 +85,10 @@
         "quantity": "6 🍎",
         "price": 8,
         "organic": true,
-        "description": "Apples are crisp and juicy fruits that come in various colors and flavors. They are known for their high fiber content and are packed with antioxidants. Apples are a versatile fruit used in desserts, salads, and snacking."
+        "description": "Apples are crisp and juicy...",
+        "type": "veg",
+        "category": "fruits",
+        "totalQuantity": 35
     },
     {
         "productName": "Spinach",
@@ -87,7 +98,10 @@
         "quantity": "1 bunch 🥬",
         "price": 3,
         "organic": true,
-        "description": "Spinach is a leafy green vegetable that is rich in nutrients and low in calories. It is known for its high iron content and is beneficial for maintaining healthy bones and promoting cardiovascular health. Spinach can be enjoyed in salads, smoothies, or cooked dishes."
+        "description": "Spinach is a leafy green vegetable that is rich in nutrients and low in calories. It is known for its high iron content and is beneficial for maintaining healthy bones and promoting cardiovascular health. Spinach can be enjoyed in salads, smoothies, or cooked dishes.",
+        "type": "veg",
+        "category": "vegetables",
+        "totalQuantity": 27
     },
     {
         "productName": "Salmon Fillet",
@@ -97,7 +111,10 @@
         "quantity": "2 fillets 🐟",
         "price": 15,
         "organic": false,
-        "description": "Salmon is a popular fish known for its rich flavor and high omega-3 fatty acid content. It is a great source of protein and is beneficial for brain health and heart health. Salmon can be grilled, baked, or pan-seared and pairs well with various seasonings and sauces."
+        "description": "Salmon is a popular fish known for its rich flavor and high omega-3 fatty acid content. It is a great source of protein and is beneficial for brain health and heart health. Salmon can be grilled, baked, or pan-seared and pairs well with various seasonings and sauces.",
+        "type": "non-veg",
+        "category": "seafood",
+        "totalQuantity": 48
     },
     {
         "productName": "Mango",
@@ -107,7 +124,10 @@
         "quantity": "4 🥭",
         "price": 6,
         "organic": true,
-        "description": "Mango is a delicious tropical fruit known for its sweet and juicy flavor. It is rich in vitamin C and vitamin A, promoting immune health and good vision. Mangoes are enjoyed fresh, in smoothies, or as an ingredient in various dishes and desserts."
+        "description": "Mango is a delicious tropical fruit known for its sweet and juicy flavor. It is rich in vitamin C and vitamin A, promoting immune health and good vision. Mangoes are enjoyed fresh, in smoothies, or as an ingredient in various dishes and desserts.",
+        "type": "veg",
+        "category": "fruits",
+        "totalQuantity": 81
     },
     {
         "productName": "Chicken Breast",
@@ -117,7 +137,10 @@
         "quantity": "2 pieces 🍗",
         "price": 10,
         "organic": false,
-        "description": "Chicken breast is a lean source of protein and is widely used in cooking. It can be grilled, baked, or sautéed to create delicious and healthy meals. Chicken breast is a versatile ingredient in salads, stir-fries, and sandwiches."
+        "description": "Chicken breast is a lean source of protein and is widely used in cooking. It can be grilled, baked, or sautéed to create delicious and healthy meals. Chicken breast is a versatile ingredient in salads, stir-fries, and sandwiches.",
+        "type": "non-veg",
+        "category": "poultry",
+        "totalQuantity": 0
     },
     {
         "productName": "Blueberries",
@@ -127,7 +150,10 @@
         "quantity": "1 pint 🫐",
         "price": 4,
         "organic": true,
-        "description": "Blueberries are small, sweet berries known for their vibrant color and nutritional benefits. They are packed with antioxidants and fiber, supporting overall health. Blueberries are enjoyed fresh, added to smoothies, or used in baking and desserts."
+        "description": "Blueberries are small, sweet berries known for their vibrant color and nutritional benefits. They are packed with antioxidants and fiber, supporting overall health. Blueberries are enjoyed fresh, added to smoothies, or used in baking and desserts.",
+        "type": "veg",
+        "category": "fruits",
+        "totalQuantity": 42
     },
     {
         "productName": "Greek Yogurt",
@@ -137,7 +163,10 @@
         "quantity": "500g 🥣",
         "price": 3,
         "organic": false,
-        "description": "Greek yogurt is a creamy and tangy dairy product known for its high protein content. It is a versatile ingredient used in breakfast bowls, smoothies, desserts, and savory recipes. Greek yogurt can be enjoyed plain or with added fruits, granola, or honey."
+        "description": "Greek yogurt is a creamy and tangy dairy product known for its high protein content. It is a versatile ingredient used in breakfast bowls, smoothies, desserts, and savory recipes. Greek yogurt can be enjoyed plain or with added fruits, granola, or honey.",
+        "type": "veg",
+        "category": "dairy",
+        "totalQuantity": 21
     },
     {
         "productName": "Avocado",
@@ -147,7 +176,10 @@
         "quantity": "2 🥑",
         "price": 5,
         "organic": true,
-        "description": "Avocado is a creamy and nutritious fruit known for its healthy fats and fiber. It is a popular ingredient in guacamole, salads, sandwiches, and smoothies. Avocado is also enjoyed as a topping on toast or as a standalone snack."
+        "description": "Avocado is a creamy and nutritious fruit known for its healthy fats and fiber. It is a popular ingredient in guacamole, salads, sandwiches, and smoothies. Avocado is also enjoyed as a topping on toast or as a standalone snack.",
+        "type": "veg",
+        "category": "fruits",
+        "totalQuantity": 42
     },
     {
         "productName": "Quinoa",
@@ -157,7 +189,10 @@
         "quantity": "500g 🍚",
         "price": 6,
         "organic": true,
-        "description": "Quinoa is a nutrient-dense grain-like seed that is gluten-free and rich in protein and fiber. It is a versatile ingredient used in salads, bowls, pilafs, and as a substitute for rice. Quinoa has a mild nutty flavor and a light and fluffy texture."
+        "description": "Quinoa is a nutrient-dense grain-like seed that is gluten-free and rich in protein and fiber. It is a versatile ingredient used in salads, bowls, pilafs, and as a substitute for rice. Quinoa has a mild nutty flavor and a light and fluffy texture.",
+        "type": "veg",
+        "category": "grains",
+        "totalQuantity": 1
     },
     {
         "productName": "Strawberries",
@@ -167,7 +202,10 @@
         "quantity": "1 pint 🍓",
         "price": 3,
         "organic": true,
-        "description": "Strawberries are juicy and flavorful berries that are rich in vitamin C and antioxidants. They are enjoyed fresh, in smoothies, desserts, and as a topping for various dishes. Strawberries are a perfect summer fruit and are loved by many."
+        "description": "Strawberries are juicy and flavorful berries that are rich in vitamin C and antioxidants. They are enjoyed fresh, in smoothies, desserts, and as a topping for various dishes. Strawberries are a perfect summer fruit and are loved by many.",
+        "type": "veg",
+        "category": "fruits",
+        "totalQuantity": 60
     },
     {
         "productName": "Whole Grain Bread",
@@ -177,7 +215,10 @@
         "quantity": "1 loaf 🍞",
         "price": 4,
         "organic": false,
-        "description": "Whole grain bread is made from whole grains that retain the bran, germ, and endosperm, providing more nutrients and fiber compared to refined bread. It is a nutritious choice for sandwiches, toasts, and as a side with meals. Whole grain bread is available in various flavors and textures."
+        "description": "Whole grain bread is made from whole grains that retain the bran, germ, and endosperm, providing more nutrients and fiber compared to refined bread. It is a nutritious choice for sandwiches, toasts, and as a side with meals. Whole grain bread is available in various flavors and textures.",
+        "type": "veg",
+        "category": "grains",
+        "totalQuantity": 48
     },
     {
         "productName": "Oranges",
@@ -187,7 +228,10 @@
         "quantity": "6 🍊",
         "price": 5,
         "organic": true,
-        "description": "Oranges are citrus fruits known for their refreshing taste and high vitamin C content. They are a great source of fiber and are enjoyed as a snack or used in juices, salads, and desserts."
+        "description": "Oranges are citrus fruits known for their refreshing taste and high vitamin C content. They are a great source of fiber and are enjoyed as a snack or used in juices, salads, and desserts.",
+        "type": "veg",
+        "category": "fruits",
+        "totalQuantity": 33
     },
     {
         "productName": "Almonds",
@@ -197,7 +241,10 @@
         "quantity": "250g 🌰",
         "price": 7,
         "organic": true,
-        "description": "Almonds are nutrient-dense nuts that are rich in healthy fats, protein, and fiber. They are a popular snack and are used in baking, cooking, and making almond butter. Almonds are also enjoyed as a topping on salads and yogurt."
+        "description": "Almonds are nutrient-dense nuts that are rich in healthy fats, protein, and fiber. They are a popular snack and are used in baking, cooking, and making almond butter. Almonds are also enjoyed as a topping on salads and yogurt.",
+        "type": "veg",
+        "category": "nuts",
+        "totalQuantity": 14
     },
     {
         "productName": "Red Grapes",
@@ -207,7 +254,10 @@
         "quantity": "1 bunch 🍇",
         "price": 4,
         "organic": true,
-        "description": "Red grapes are sweet and juicy fruits that are packed with antioxidants, including resveratrol. They are enjoyed fresh as a snack or used in fruit salads, desserts, and even in making wine."
+        "description": "Red grapes are sweet and juicy fruits that are packed with antioxidants, including resveratrol. They are enjoyed fresh as a snack or used in fruit salads, desserts, and even in making wine.",
+        "type": "veg",
+        "category": "fruits",
+        "totalQuantity": 20
     },
     {
         "productName": "Peanut Butter",
@@ -217,7 +267,10 @@
         "quantity": "500g 🫙",
         "price": 6,
         "organic": false,
-        "description": "Peanut butter is a creamy spread made from roasted peanuts. It is a rich source of protein and healthy fats, making it a popular choice for sandwiches, smoothies, baking, and as a dip for fruits and veggies."
+        "description": "Peanut butter is a creamy spread made from roasted peanuts. It is a rich source of protein and healthy fats, making it a popular choice for sandwiches, smoothies, baking, and as a dip for fruits and veggies.",
+        "type": "veg",
+        "category": "condiments",
+        "totalQuantity": 49
     },
     {
         "productName": "Red Onions",
@@ -227,7 +280,10 @@
         "quantity": "1 kg 🧅",
         "price": 3,
         "organic": true,
-        "description": "Red onions are pungent and flavorful vegetables that add a pop of color and taste to various dishes. They are a good source of fiber and vitamin C. Red onions are commonly used in salads, salsas, stir-fries, and as a garnish."
+        "description": "Red onions are pungent and flavorful vegetables that add a pop of color and taste to various dishes. They are a good source of fiber and vitamin C. Red onions are commonly used in salads, salsas, stir-fries, and as a garnish.",
+        "type": "veg",
+        "category": "vegetables",
+        "totalQuantity": 45
     },
     {
         "productName": "Eggs",
@@ -237,7 +293,10 @@
         "quantity": "12 🥚",
         "price": 3,
         "organic": true,
-        "description": "Eggs are a versatile food rich in protein and essential vitamins. They can be boiled, scrambled, fried, or used as an ingredient in various recipes such as omelets, baked goods, and custards."
+        "description": "Eggs are a versatile food rich in protein and essential vitamins. They can be boiled, scrambled, fried, or used as an ingredient in various recipes such as omelets, baked goods, and custards.",
+        "type": "non-veg",
+        "category": "poultry",
+        "totalQuantity": 91
     },
     {
         "productName": "Cucumbers",
@@ -247,7 +306,10 @@
         "quantity": "3 🥒",
         "price": 2,
         "organic": true,
-        "description": "Cucumbers are crisp and refreshing vegetables with a high water content. They are low in calories and a good source of hydration. Cucumbers are enjoyed in salads, sandwiches, pickles, and as a healthy snack."
+        "description": "Cucumbers are crisp and refreshing vegetables with a high water content. They are low in calories and a good source of hydration. Cucumbers are enjoyed in salads, sandwiches, pickles, and as a healthy snack.",
+        "type": "veg",
+        "category": "vegetables",
+        "totalQuantity": 41
     },
     {
         "productName": "Honey",
@@ -257,7 +319,10 @@
         "quantity": "500g 🍯",
         "price": 8,
         "organic": true,
-        "description": "Honey is a natural sweetener produced by bees from flower nectar. It contains antioxidants and has antimicrobial properties. Honey is used as a sweetener in beverages, baking, dressings, and as a natural remedy for various health issues."
+        "description": "Honey is a natural sweetener produced by bees from flower nectar. It contains antioxidants and has antimicrobial properties. Honey is used as a sweetener in beverages, baking, dressings, and as a natural remedy for various health issues.",
+        "type": "veg",
+        "category": "sweeteners",
+        "totalQuantity": 94
     },
     {
         "productName": "Potatoes",
@@ -267,7 +332,10 @@
         "quantity": "2 kg 🥔",
         "price": 4,
         "organic": true,
-        "description": "Potatoes are starchy root vegetables that are a staple in many cuisines. They are a good source of carbohydrates and vitamin C. Potatoes can be boiled, baked, roasted, or mashed and are used in various dishes and side dishes."
+        "description": "Potatoes are starchy root vegetables that are a staple in many cuisines. They are a good source of carbohydrates and vitamin C. Potatoes can be boiled, baked, roasted, or mashed and are used in various dishes and side dishes.",
+        "type": "veg",
+        "category": "vegetables",
+        "totalQuantity": 53
     },
     {
         "productName": "Lemons",
@@ -277,7 +345,10 @@
         "quantity": "6 🍋",
         "price": 3,
         "organic": true,
-        "description": "Lemons are citrus fruits known for their tart and acidic flavor. They are a rich source of vitamin C and are used in cooking, baking, and as a natural flavor enhancer in various dishes, beverages, and desserts."
+        "description": "Lemons are citrus fruits known for their tart and acidic flavor. They are a rich source of vitamin C and are used in cooking, baking, and as a natural flavor enhancer in various dishes, beverages, and desserts.",
+        "type": "veg",
+        "category": "fruits",
+        "totalQuantity": 46
     },
     {
         "productName": "Hot Pepper",
@@ -287,7 +358,10 @@
         "quantity": "3 🌶️",
         "price": 3,
         "organic": true,
-        "description": "Hot peppers come in various colors and are known for their crisp texture and sweet taste. They are a great source of vitamin C and fiber. Hot peppers are used in salads, stir-fries, stuffed dishes, and as a colorful addition to many recipes."
+        "description": "Hot peppers come in various colors and are known for their crisp texture and sweet taste. They are a great source of vitamin C and fiber. Hot peppers are used in salads, stir-fries, stuffed dishes, and as a colorful addition to many recipes.",
+        "type": "veg",
+        "category": "vegetables",
+        "totalQuantity": 32
     },
     {
         "productName": "Spinach",
@@ -297,7 +371,10 @@
         "quantity": "200g 🌿",
         "price": 3,
         "organic": true,
-        "description": "Spinach is a leafy green vegetable that is packed with nutrients, including iron and calcium. It has a mild and slightly earthy flavor. Spinach can be enjoyed raw in salads, sautéed as a side dish, or used in smoothies and cooked recipes."
+        "description": "Spinach is a leafy green vegetable that is packed with nutrients, including iron and calcium. It has a mild and slightly earthy flavor. Spinach can be enjoyed raw in salads, sautéed as a side dish, or used in smoothies and cooked recipes.",
+        "type": "veg",
+        "category": "vegetables",
+        "totalQuantity": 81
     },
     {
         "productName": "Zucchini",
@@ -307,7 +384,10 @@
         "quantity": "2 🥒",
         "price": 2,
         "organic": true,
-        "description": "Zucchini is a versatile summer squash that has a mild and slightly sweet flavor. It is a good source of vitamin C and fiber. Zucchini can be grilled, roasted, sautéed, or used in soups, stir-fries, and baked goods."
+        "description": "Zucchini is a versatile summer squash that has a mild and slightly sweet flavor. It is a good source of vitamin C and fiber. Zucchini can be grilled, roasted, sautéed, or used in soups, stir-fries, and baked goods.",
+        "type": "veg",
+        "category": "vegetables",
+        "totalQuantity": 85
     },
     {
         "productName": "Brussels Sprouts",
@@ -317,7 +397,10 @@
         "quantity": "250g 🌱",
         "price": 4,
         "organic": true,
-        "description": "Brussels sprouts are miniature cabbage-like vegetables that are packed with nutrients, including vitamin K and fiber. They have a slightly bitter taste and can be roasted, sautéed, or used in salads, side dishes, and roasted vegetable medleys."
+        "description": "Brussels sprouts are miniature cabbage-like vegetables that are packed with nutrients, including vitamin K and fiber. They have a slightly bitter taste and can be roasted, sautéed, or used in salads, side dishes, and roasted vegetable medleys.",
+        "type": "veg",
+        "category": "vegetables",
+        "totalQuantity": 61
     },
     {
         "productName": "Mushrooms",
@@ -327,7 +410,10 @@
         "quantity": "200g 🍄",
         "price": 4,
         "organic": true,
-        "description": "Mushrooms are edible fungi that come in various types and flavors. They are a good source of vitamin D and B vitamins. Mushrooms can be sautéed, grilled, used in soups, sauces, stir-fries, and as a meat substitute in vegetarian dishes."
+        "description": "Mushrooms are edible fungi that come in various types and flavors. They are a good source of vitamin D and B vitamins. Mushrooms can be sautéed, grilled, used in soups, sauces, stir-fries, and as a meat substitute in vegetarian dishes.",
+        "type": "veg",
+        "category": "vegetables",
+        "totalQuantity": 62
     },
     {
         "productName": "Eggplant",
@@ -337,7 +423,10 @@
         "quantity": "1 🍆",
         "price": 2,
         "organic": true,
-        "description": "Eggplant, also known as aubergine, is a versatile vegetable with a glossy purple skin and a spongy flesh. It is a good source of fiber and antioxidants. Eggplant can be roasted, grilled, baked, or used in stir-fries and Mediterranean dishes like moussaka."
+        "description": "Eggplant, also known as aubergine, is a versatile vegetable with a glossy purple skin and a spongy flesh. It is a good source of fiber and antioxidants. Eggplant can be roasted, grilled, baked, or used in stir-fries and Mediterranean dishes like moussaka.",
+        "type": "veg",
+        "category": "vegetables",
+        "totalQuantity": 49
     },
     {
         "productName": "Bell Peppers",
@@ -347,7 +436,10 @@
         "quantity": "3 🫑",
         "price": 3,
         "organic": true,
-        "description": "Bell peppers come in various colors and are known for their crisp texture and sweet taste. They are a great source of vitamin C and fiber. Bell peppers are used in salads, stir-fries, stuffed dishes, and as a colorful addition to many recipes."
+        "description": "Bell peppers come in various colors and are known for their crisp texture and sweet taste. They are a great source of vitamin C and fiber. Bell peppers are used in salads, stir-fries, stuffed dishes, and as a colorful addition to many recipes.",
+        "type": "veg",
+        "category": "vegetables",
+        "totalQuantity": 14
     },
     {
         "productName": "Garlic",
@@ -357,7 +449,10 @@
         "quantity": "5 cloves 🧄",
         "price": 2,
         "organic": true,
-        "description": "Garlic is a pungent bulbous plant known for its strong flavor and aroma. It is rich in vitamin C and manganese. Garlic is used in various cuisines to add flavor to dishes, sauces, marinades, and dressings. It is also known for its potential health benefits."
+        "description": "Garlic is a pungent bulbous plant known for its strong flavor and aroma. It is rich in vitamin C and manganese. Garlic is used in various cuisines to add flavor to dishes, sauces, marinades, and dressings. It is also known for its potential health benefits.",
+        "type": "veg",
+        "category": "vegetables",
+        "totalQuantity": 16
     },
     {
         "productName": "Peanuts",
@@ -367,7 +462,10 @@
         "quantity": "250g 🥜",
         "price": 4,
         "organic": true,
-        "description": "Peanuts are legumes that are rich in protein and healthy fats. They are often enjoyed as a snack, used in peanut butter, or added to various recipes, both savory and sweet. Peanuts can be roasted, boiled, or used as a topping in salads, stir-fries, and desserts."
+        "description": "Peanuts are legumes that are rich in protein and healthy fats. They are often enjoyed as a snack, used in peanut butter, or added to various recipes, both savory and sweet. Peanuts can be roasted, boiled, or used as a topping in salads, stir-fries, and desserts.",
+        "type": "veg",
+        "category": "nuts",
+        "totalQuantity": 17
     },
     {
         "productName": "Chestnut",
@@ -377,7 +475,10 @@
         "quantity": "250g 🌰",
         "price": 5,
         "organic": true,
-        "description": "Chestnuts are nuts that have a sweet and nutty flavor. They are a good source of carbohydrates and fiber. Chestnuts can be roasted, boiled, or used in both sweet and savory dishes."
+        "description": "Chestnuts are nuts that have a sweet and nutty flavor. They are a good source of carbohydrates and fiber. Chestnuts can be roasted, boiled, or used in both sweet and savory dishes.",
+        "type": "veg",
+        "category": "nuts",
+        "totalQuantity": 35
     },
     {
         "productName": "Bread",
@@ -387,7 +488,10 @@
         "quantity": "1 loaf 🍞",
         "price": 4,
         "organic": false,
-        "description": "Bread is a staple food prepared from a dough of flour and water, usually by baking. It is a common food item that comes in various types and flavors. Bread can be enjoyed as toast, sandwiches, or used in various recipes."
+        "description": "Bread is a staple food prepared from a dough of flour and water, usually by baking. It is a common food item that comes in various types and flavors. Bread can be enjoyed as toast, sandwiches, or used in various recipes.",
+        "type": "veg",
+        "category": "baked goods",
+        "totalQuantity": 52
     },
     {
         "productName": "Croissant",
@@ -397,7 +501,10 @@
         "quantity": "1 piece 🥐",
         "price": 2,
         "organic": false,
-        "description": "Croissant is a buttery and flaky pastry of French origin. It has a crescent shape and is made with layered dough. Croissants are commonly enjoyed as a breakfast or snack item."
+        "description": "Croissant is a buttery and flaky pastry of French origin. It has a crescent shape and is made with layered dough. Croissants are commonly enjoyed as a breakfast or snack item.",
+        "type": "veg",
+        "category": "baked goods",
+        "totalQuantity": 15
     },
     {
         "productName": "Baguette Bread",
@@ -407,7 +514,10 @@
         "quantity": "1 baguette 🥖",
         "price": 3,
         "organic": false,
-        "description": "Baguette bread is a long and thin loaf of bread with a crisp crust and soft interior. It is a staple of French cuisine and is commonly used for making sandwiches or served alongside meals."
+        "description": "Baguette bread is a long and thin loaf of bread with a crisp crust and soft interior. It is a staple of French cuisine and is commonly used for making sandwiches or served alongside meals.",
+        "type": "veg",
+        "category": "baked goods",
+        "totalQuantity": 44
     },
     {
         "productName": "Flatbread",
@@ -417,7 +527,10 @@
         "quantity": "1 piece 🫓",
         "price": 2,
         "organic": false,
-        "description": "Flatbread is a type of bread that is thin and unleavened. It is versatile and can be used as a base for pizzas, wraps, or enjoyed on its own. Flatbread comes in various regional variations and flavors."
+        "description": "Flatbread is a type of bread that is thin and unleavened. It is versatile and can be used as a base for pizzas, wraps, or enjoyed on its own. Flatbread comes in various regional variations and flavors.",
+        "type": "veg",
+        "category": "baked goods",
+        "totalQuantity": 85
     },
     {
         "productName": "Pretzel",
@@ -427,7 +540,10 @@
         "quantity": "1 piece 🥨",
         "price": 1,
         "organic": false,
-        "description": "Pretzel is a baked bread product that is twisted into a knot shape. It has a chewy texture and is often sprinkled with salt. Pretzels are a popular snack and can be enjoyed plain or dipped in sauces."
+        "description": "Pretzel is a baked bread product that is twisted into a knot shape. It has a chewy texture and is often sprinkled with salt. Pretzels are a popular snack and can be enjoyed plain or dipped in sauces.",
+        "type": "veg",
+        "category": "baked goods",
+        "totalQuantity": 78
     },
     {
         "productName": "Bagel",
@@ -437,7 +553,10 @@
         "quantity": "1 piece 🥯",
         "price": 2,
         "organic": false,
-        "description": "Bagel is a dense and chewy bread product with a distinctive ring shape. It is boiled and then baked, resulting in a chewy interior and a slightly crispy crust. Bagels are commonly sliced and topped with spreads or used for making sandwiches."
+        "description": "Bagel is a dense and chewy bread product with a distinctive ring shape. It is boiled and then baked, resulting in a chewy interior and a slightly crispy crust. Bagels are commonly sliced and topped with spreads or used for making sandwiches.",
+        "type": "veg",
+        "category": "baked goods",
+        "totalQuantity": 42
     },
     {
         "productName": "Pancakes",
@@ -447,7 +566,10 @@
         "quantity": "3 pancakes 🥞",
         "price": 5,
         "organic": false,
-        "description": "Pancakes are a popular breakfast dish made from a batter of flour, eggs, milk, and a raising agent. They are cooked on a griddle or a pan and are typically served with syrup, fruits, or other toppings."
+        "description": "Pancakes are a popular breakfast dish made from a batter of flour, eggs, milk, and a raising agent. They are cooked on a griddle or a pan and are typically served with syrup, fruits, or other toppings.",
+        "type": "veg",
+        "category": "baked goods",
+        "totalQuantity": 65
     },
     {
         "productName": "Waffle",
@@ -457,7 +579,10 @@
         "quantity": "1 waffle 🧇",
         "price": 3,
         "organic": false,
-        "description": "Waffle is a breakfast food made from a batter cooked between two patterned plates to give it a distinctive grid-like appearance. Waffles are crispy on the outside and fluffy on the inside. They are often served with syrup, butter, or fruits."
+        "description": "Waffle is a breakfast food made from a batter cooked between two patterned plates to give it a distinctive grid-like appearance. Waffles are crispy on the outside and fluffy on the inside. They are often served with syrup, butter, or fruits.",
+        "type": "veg",
+        "category": "baked goods",
+        "totalQuantity": 78
     },
     {
         "productName": "Meat on Bone",
@@ -467,7 +592,10 @@
         "quantity": "1 piece 🍖",
         "price": 8,
         "organic": true,
-        "description": "Meat on bone refers to cuts of meat that are sold with the bone still attached. It can be various types of meat, such as beef, pork, or lamb. Meat on bone is often used in slow-cooking recipes or for grilling."
+        "description": "Meat on bone refers to cuts of meat that are sold with the bone still attached. It can be various types of meat, such as beef, pork, or lamb. Meat on bone is often used in slow-cooking recipes or for grilling.",
+        "type": "non-veg",
+        "category": "meat",
+        "totalQuantity": 84
     },
     {
         "productName": "Cut of Meat",
@@ -477,7 +605,10 @@
         "quantity": "500g 🥩",
         "price": 10,
         "organic": true,
-        "description": "Cut of meat refers to specific portions or pieces of meat that are commonly used in cooking. It can include steaks, roasts, chops, or ground meat. Different cuts of meat have distinct characteristics and are suitable for various cooking methods."
+        "description": "Cut of meat refers to specific portions or pieces of meat that are commonly used in cooking. It can include steaks, roasts, chops, or ground meat. Different cuts of meat have distinct characteristics and are suitable for various cooking methods.",
+        "type": "non-veg",
+        "category": "meat",
+        "totalQuantity": 92
     },
     {
         "productName": "Bacon",
@@ -487,7 +618,10 @@
         "quantity": "250g 🥓",
         "price": 6,
         "organic": false,
-        "description": "Bacon is a type of salt-cured pork that is typically smoked and sliced thin. It is known for its savory and smoky flavor. Bacon is often fried or baked and is a popular ingredient in breakfast dishes, sandwiches, and salads."
+        "description": "Bacon is a type of salt-cured pork that is typically smoked and sliced thin. It is known for its savory and smoky flavor. Bacon is often fried or baked and is a popular ingredient in breakfast dishes, sandwiches, and salads.",
+        "type": "non-veg",
+        "category": "meat",
+        "totalQuantity": 65
     },
     {
         "productName": "Egg",
@@ -497,7 +631,10 @@
         "quantity": "1 egg 🥚",
         "price": 0.5,
         "organic": true,
-        "description": "Egg is a common food item obtained from chickens. It is a versatile ingredient used in various recipes and cooking methods. Eggs are a good source of protein and essential vitamins."
+        "description": "Egg is a common food item obtained from chickens. It is a versatile ingredient used in various recipes and cooking methods. Eggs are a good source of protein and essential vitamins.",
+        "type": "non-veg",
+        "category": "dairy",
+        "totalQuantity": 68
     },
     {
         "productName": "Fish Cake",
@@ -507,7 +644,10 @@
         "quantity": "1 piece 🍥",
         "price": 2,
         "organic": false,
-        "description": "Fish cake is a processed seafood product made from fish or seafood paste. It is often seasoned, shaped, and cooked into a firm and flavorful cake. Fish cakes are commonly used in soups, stir-fries, and Asian cuisine."
+        "description": "Fish cake is a processed seafood product made from fish or seafood paste. It is often seasoned, shaped, and cooked into a firm and flavorful cake. Fish cakes are commonly used in soups, stir-fries, and Asian cuisine.",
+        "type": "non-veg",
+        "category": "seafood",
+        "totalQuantity": 50
     },
     {
         "productName": "Moon Cake",
@@ -517,7 +657,10 @@
         "quantity": "1 piece 🥮",
         "price": 4,
         "organic": false,
-        "description": "Moon cake is a traditional Chinese pastry that is typically enjoyed during the Mid-Autumn Festival. It has a round shape and various fillings, such as lotus seed paste, red bean paste, or salted egg yolk. Moon cakes are often intricately designed and come in decorative packaging."
+        "description": "Moon cake is a traditional Chinese pastry that is typically enjoyed during the Mid-Autumn Festival. It has a round shape and various fillings, such as lotus seed paste, red bean paste, or salted egg yolk. Moon cakes are often intricately designed and come in decorative packaging.",
+        "type": "veg",
+        "category": "desserts",
+        "totalQuantity": 95
     },
     {
         "productName": "Dango",
@@ -527,7 +670,10 @@
         "quantity": "3 pieces 🍡",
         "price": 3,
         "organic": false,
-        "description": "Dango is a Japanese dumpling made from rice flour. It has a chewy texture and is often served on skewers. Dango comes in various flavors and is commonly enjoyed as a sweet treat or snack."
+        "description": "Dango is a Japanese dumpling made from rice flour. It has a chewy texture and is often served on skewers. Dango comes in various flavors and is commonly enjoyed as a sweet treat or snack.",
+        "type": "veg",
+        "category": "snacks",
+        "totalQuantity": 47
     },
     {
         "productName": "Dumpling",
@@ -537,7 +683,10 @@
         "quantity": "6 pieces 🥟",
         "price": 5,
         "organic": false,
-        "description": "Dumplings are a common food item in many cultures. They consist of dough wrapped around a filling, which can be meat, vegetables, or a combination of both. Dumplings can be steamed, boiled, or pan-fried, and are often served with dipping sauces."
+        "description": "Dumplings are a common food item in many cultures. They consist of dough wrapped around a filling, which can be meat, vegetables, or a combination of both. Dumplings can be steamed, boiled, or pan-fried, and are often served with dipping sauces.",
+        "type": "non-veg",
+        "category": "snacks",
+        "totalQuantity": 86
     },
     {
         "productName": "Fortune Cookie",
@@ -547,7 +696,10 @@
         "quantity": "1 cookie 🥠",
         "price": 1,
         "organic": false,
-        "description": "Fortune cookie is a crisp and sweet cookie that often contains a small piece of paper with a fortune or a positive message inside. It is commonly served as a dessert at Chinese restaurants and is associated with fun and curiosity."
+        "description": "Fortune cookie is a crisp and sweet cookie that often contains a small piece of paper with a fortune or a positive message inside. It is commonly served as a dessert at Chinese restaurants and is associated with fun and curiosity.",
+        "type": "veg",
+        "category": "desserts",
+        "totalQuantity": 72
     },
     {
         "productName": "Crab",
@@ -557,7 +709,10 @@
         "quantity": "1 crab 🦀",
         "price": 12,
         "organic": true,
-        "description": "Crab is a crustacean known for its sweet and delicate meat. It is often cooked and enjoyed as a seafood delicacy. Crabs can be prepared in various ways, including steamed, boiled, grilled, or used in dishes like crab cakes or crab soup."
+        "description": "Crab is a crustacean known for its sweet and delicate meat. It is often cooked and enjoyed as a seafood delicacy. Crabs can be prepared in various ways, including steamed, boiled, grilled, or used in dishes like crab cakes or crab soup.",
+        "type": "non-veg",
+        "category": "seafood",
+        "totalQuantity": 78
     },
     {
         "productName": "Lobster",
@@ -567,7 +722,10 @@
         "quantity": "1 lobster 🦞",
         "price": 18,
         "organic": true,
-        "description": "Lobster is a marine crustacean with a hard exoskeleton and tender meat. It is considered a luxury seafood item and is often associated with special occasions. Lobster can be boiled, steamed, grilled, or used in various gourmet dishes."
+        "description": "Lobster is a marine crustacean with a hard exoskeleton and tender meat. It is considered a luxury seafood item and is often associated with special occasions. Lobster can be boiled, steamed, grilled, or used in various gourmet dishes.",
+        "type": "non-veg",
+        "category": "seafood",
+        "totalQuantity": 93
     },
     {
         "productName": "Shrimp",
@@ -577,7 +735,10 @@
         "quantity": "250g 🦐",
         "price": 8,
         "organic": false,
-        "description": "Shrimp is a small crustacean with a tender and flavorful meat. It is widely consumed around the world and can be cooked in various ways, including boiling, grilling, sautéing, or used in dishes like shrimp scampi or shrimp curry."
+        "description": "Shrimp is a small crustacean with a tender and flavorful meat. It is widely consumed around the world and can be cooked in various ways, including boiling, grilling, sautéing, or used in dishes like shrimp scampi or shrimp curry.",
+        "type": "non-veg",
+        "category": "seafood",
+        "totalQuantity": 2
     },
     {
         "productName": "Squid",
@@ -587,7 +748,10 @@
         "quantity": "250g 🦑",
         "price": 7,
         "organic": false,
-        "description": "Squid is a mollusk with a firm and chewy texture. It is used as a popular seafood ingredient in various cuisines. Squid can be grilled, fried, stir-fried, or used in dishes like calamari or seafood pasta."
+        "description": "Squid is a mollusk with a firm and chewy texture. It is used as a popular seafood ingredient in various cuisines. Squid can be grilled, fried, stir-fried, or used in dishes like calamari or seafood pasta.",
+        "type": "non-veg",
+        "category": "seafood",
+        "totalQuantity": 38
     },
     {
         "productName": "Oyster",
@@ -597,7 +761,10 @@
         "quantity": "1 oyster 🦪",
         "price": 2,
         "organic": true,
-        "description": "Oyster is a bivalve mollusk known for its delicate and briny taste. It is often enjoyed raw or cooked and is considered a delicacy in many cultures. Oysters can be shucked and served on the half shell or used in dishes like oyster stew or grilled oysters."
+        "description": "Oyster is a bivalve mollusk known for its delicate and briny taste. It is often enjoyed raw or cooked and is considered a delicacy in many cultures. Oysters can be shucked and served on the half shell or used in dishes like oyster stew or grilled oysters.",
+        "type": "non-veg",
+        "category": "seafood",
+        "totalQuantity": 39
     },
     {
         "productName": "Ice Cream Cone",
@@ -607,7 +774,10 @@
         "quantity": "1 cone 🍦",
         "price": 3,
         "organic": false,
-        "description": "Ice cream cone is a classic frozen dessert served in a cone-shaped wafer or sugar cone. It is filled with various flavors of creamy ice cream and is often topped with sprinkles, chocolate sauce, or other toppings."
+        "description": "Ice cream cone is a classic frozen dessert served in a cone-shaped wafer or sugar cone. It is filled with various flavors of creamy ice cream and is often topped with sprinkles, chocolate sauce, or other toppings.",
+        "type": "veg",
+        "category": "desserts",
+        "totalQuantity": 97
     },
     {
         "productName": "Shaved Ice Cream",
@@ -617,7 +787,10 @@
         "quantity": "1 serving 🍧",
         "price": 4,
         "organic": false,
-        "description": "Shaved ice cream is a refreshing frozen treat made by shaving a block of ice and adding flavored syrups on top. It is often enjoyed with various toppings such as fruits, condensed milk, or sweet sauces."
+        "description": "Shaved ice cream is a refreshing frozen treat made by shaving a block of ice and adding flavored syrups on top. It is often enjoyed with various toppings such as fruits, condensed milk, or sweet sauces.",
+        "type": "veg",
+        "category": "desserts",
+        "totalQuantity": 47
     },
     {
         "productName": "Ice Cream",
@@ -627,7 +800,10 @@
         "quantity": "1 scoop 🍨",
         "price": 2,
         "organic": false,
-        "description": "Ice cream is a creamy and frozen dessert made from dairy or non-dairy ingredients. It comes in various flavors and is a popular treat enjoyed by people of all ages. Ice cream can be served in cones, cups, or as part of sundaes and milkshakes."
+        "description": "Ice cream is a creamy and frozen dessert made from dairy or non-dairy ingredients. It comes in various flavors and is a popular treat enjoyed by people of all ages. Ice cream can be served in cones, cups, or as part of sundaes and milkshakes.",
+        "type": "veg",
+        "category": "desserts",
+        "totalQuantity": 89
     },
     {
         "productName": "Doughnut",
@@ -637,7 +813,10 @@
         "quantity": "1 doughnut 🍩",
         "price": 2,
         "organic": false,
-        "description": "Doughnut, also known as donut, is a fried or baked pastry with a round shape and a hole in the center. It is often coated with sugar glaze, icing, or sprinkles. Doughnuts come in various flavors and can be filled with creams, jams, or other sweet fillings."
+        "description": "Doughnut, also known as donut, is a fried or baked pastry with a round shape and a hole in the center. It is often coated with sugar glaze, icing, or sprinkles. Doughnuts come in various flavors and can be filled with creams, jams, or other sweet fillings.",
+        "type": "veg",
+        "category": "desserts",
+        "totalQuantity": 70
     },
     {
         "productName": "Cookie",
@@ -647,7 +826,10 @@
         "quantity": "1 cookie 🍪",
         "price": 1,
         "organic": false,
-        "description": "Cookie is a baked sweet treat made from dough typically containing flour, sugar, butter, and flavorings such as chocolate chips, nuts, or dried fruits. Cookies come in various shapes, sizes, and flavors and are a popular snack or dessert item."
+        "description": "Cookie is a baked sweet treat made from dough typically containing flour, sugar, butter, and flavorings such as chocolate chips, nuts, or dried fruits. Cookies come in various shapes, sizes, and flavors and are a popular snack or dessert item.",
+        "type": "veg",
+        "category": "desserts",
+        "totalQuantity": 40
     },
     {
         "productName": "Cake",
@@ -657,7 +839,10 @@
         "quantity": "1 slice 🎂",
         "price": 5,
         "organic": false,
-        "description": "Cake is a baked dessert made from a sweet batter typically containing flour, sugar, eggs, and butter or oil. Cakes come in various flavors, sizes, and designs and are often enjoyed on special occasions like birthdays or weddings."
+        "description": "Cake is a baked dessert made from a sweet batter typically containing flour, sugar, eggs, and butter or oil. Cakes come in various flavors, sizes, and designs and are often enjoyed on special occasions like birthdays or weddings.",
+        "type": "veg",
+        "category": "desserts",
+        "totalQuantity": 42
     },
     {
         "productName": "Cupcake",
@@ -667,7 +852,10 @@
         "quantity": "1 cupcake 🧁",
         "price": 2,
         "organic": false,
-        "description": "Cupcake is a small individual-sized cake that is often baked in a paper or aluminum cup. It is decorated with frosting, sprinkles, or other toppings and is a popular treat for parties, celebrations, or as a sweet snack."
+        "description": "Cupcake is a small individual-sized cake that is often baked in a paper or aluminum cup. It is decorated with frosting, sprinkles, or other toppings and is a popular treat for parties, celebrations, or as a sweet snack.",
+        "type": "veg",
+        "category": "desserts",
+        "totalQuantity": 57
     },
     {
         "productName": "Pie",
@@ -677,7 +865,10 @@
         "quantity": "1 slice 🥧",
         "price": 6,
         "organic": false,
-        "description": "Pie is a baked dessert with a pastry crust and a sweet or savory filling. It can be filled with various ingredients such as fruits, nuts, meat, or vegetables. Pies come in different flavors and are often enjoyed as a comforting and delicious dessert."
+        "description": "Pie is a baked dessert with a pastry crust and a sweet or savory filling. It can be filled with various ingredients such as fruits, nuts, meat, or vegetables. Pies come in different flavors and are often enjoyed as a comforting and delicious dessert.",
+        "type": "veg",
+        "category": "desserts",
+        "totalQuantity": 66
     },
     {
         "productName": "Chocolate Bar",
@@ -687,7 +878,10 @@
         "quantity": "1 bar 🍫",
         "price": 3,
         "organic": false,
-        "description": "Chocolate bar is a sweet treat made from cocoa beans that are processed into chocolate. It comes in various flavors and may contain additional ingredients such as nuts, caramel, or fruits. Chocolate bars are a popular indulgence enjoyed by chocolate lovers."
+        "description": "Chocolate bar is a sweet treat made from cocoa beans that are processed into chocolate. It comes in various flavors and may contain additional ingredients such as nuts, caramel, or fruits. Chocolate bars are a popular indulgence enjoyed by chocolate lovers.",
+        "type": "veg",
+        "category": "desserts",
+        "totalQuantity": 21
     },
     {
         "productName": "Candy",
@@ -697,7 +891,10 @@
         "quantity": "1 piece 🍬",
         "price": 1,
         "organic": false,
-        "description": "Candy refers to a variety of sweet treats that are usually made with sugar, flavorings, and other ingredients. Candies come in different shapes, sizes, and flavors and are enjoyed as a sugary delight for kids and adults alike."
+        "description": "Candy refers to a variety of sweet treats that are usually made with sugar, flavorings, and other ingredients. Candies come in different shapes, sizes, and flavors and are enjoyed as a sugary delight for kids and adults alike.",
+        "type": "veg",
+        "category": "desserts",
+        "totalQuantity": 48
     },
     {
         "productName": "Lollipop",
@@ -707,7 +904,10 @@
         "quantity": "1 lollipop 🍭",
         "price": 2,
         "organic": false,
-        "description": "Lollipop is a hard candy that is mounted on a stick. It comes in various shapes, flavors, and colors and is enjoyed by licking or sucking on it. Lollipops are a popular treat for children and can bring joy with their vibrant appearance."
+        "description": "Lollipop is a hard candy that is mounted on a stick. It comes in various shapes, flavors, and colors and is enjoyed by licking or sucking on it. Lollipops are a popular treat for children and can bring joy with their vibrant appearance.",
+        "type": "veg",
+        "category": "desserts",
+        "totalQuantity": 73
     },
     {
         "productName": "Custard",
@@ -717,6 +917,9 @@
         "quantity": "1 serving 🍮",
         "price": 3,
         "organic": false,
-        "description": "Custard is a creamy and silky dessert made from a mixture of milk or cream, eggs, sugar, and flavorings. It can be served warm or chilled and is often enjoyed on its own or used as a base for other desserts like fruit tarts or trifle."
+        "description": "Custard is a creamy and silky dessert made from a mixture of milk or cream, eggs, sugar, and flavorings. It can be served warm or chilled and is often enjoyed on its own or used as a base for other desserts like fruit tarts or trifle.",
+        "type": "veg",
+        "category": "desserts",
+        "totalQuantity": 81
     }
 ]

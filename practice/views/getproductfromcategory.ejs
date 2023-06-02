@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="http://localhost:3000/getproductfromcategory.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="header">
+                <%= header %>
+            </div>
+            <div class="body">
+                <div class="productscontainer">
+                    <% for(r of response) {%>
+                        <div class="eachproducts">
+                            <a class="product" href="/product/<%= r.name %>">
+
+                                <div class="image">
+                                    <div class="icon">
+                                        <%= r.icon %>
+                                    </div>
+                                </div>
+                                <div class="details">
+                                    <div class="name">
+                                        <%= r.name %>
+                                    </div>
+                                    <div class="price">
+                                        $<%= r.price %>
+                                            <svg stroke="#eeca89" fill="#eeca89" stroke-width="0" viewBox="0 0 256 512"
+                                                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z">
+                                                </path>
+                                            </svg>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
