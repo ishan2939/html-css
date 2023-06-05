@@ -13,7 +13,7 @@
 .container .content {
     width: 100%;
     margin: 0;
-    padding: 50px 100px;
+    padding: 0px 100px;
 }
 
 .container .content .header{
@@ -51,6 +51,11 @@
     font-size: 18px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     text-decoration: none;
+    border: 2px solid #e2a83b;
+    transition: .5s;
+}
+.container .content .body .productscontainer .eachproducts .product:hover{
+    transform: scale(1.1);
 }
 .container .content .body .productscontainer .eachproducts .product .image{
     font-size: 55px;
@@ -68,6 +73,17 @@
     font-weight: bold;
     min-width: 90px;
 }
+.container .content .body .productscontainer .eachproducts .product .details .price .cart{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0b769;
+    border-radius: 20px;
+}
+.container .content .body .productscontainer .eachproducts .product .details .price .cart:hover{
+    background-color: #dd9207;
+}
 .container .content .body .productscontainer .eachproducts .product .details .name{
     width: 130px;
     display: block;
@@ -83,4 +99,22 @@
     font-size: 16px;
     cursor: pointer;
     transition: .3s;
+}
+
+@media only screen and (max-width: 1400px) {
+    .container .content .body .productscontainer .eachproducts{
+        flex: 0 0 33.33%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .container .content .body .productscontainer .eachproducts{
+        flex: 0 0 50%;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .container .content .body .productscontainer .eachproducts{
+        flex: 0 0 100%;
+    }
 }

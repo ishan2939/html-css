@@ -1,0 +1,4 @@
+turn entire product card from a to div
+create home page
+cart
+sort and search

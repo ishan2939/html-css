@@ -27,9 +27,7 @@ db.products.aggregate([{ $project: { _id: 0, category: 1 } },
 
 //get searched products
 db.products.aggregate([{ $match: { productName: { $regex: /c/ } } },
-{ $project: { _id: 0, productName: 1, image: 1, price: 1 } },
-{ $group: { _id: null, foundProducts: { $push: { image: "$image", name: "$productName", price: "$price" } } } },
-{ $project: { _id: 0, foundProducts: 1 } }
+{ $project: { _id: 0, productName: 1, image: 1, price: 1 } }
 ]);
 
 //get all the categories with it's icons
@@ -38,3 +36,19 @@ db.products.aggregate([{ $project: { image: 1, category: 1, _id: 0 } },
 { $project: { category: "$_id", _id: 0, icon: { $arrayElemAt: ["$image", 0] } } },
 { $sort: { category: 1 } }
 ]);
+
+//get product details
+
+db.products.aggregate([{$match: {productName : "wheat"}} , 
+{$project: {
+    _id: 0, 
+    name: "$productName", 
+    icon: 1, 
+    price: {$concat: [{ $convert: { input: "$price", to: "string", onError: 0, onNull: 0}}, " $ for ", "$quantity"]}, 
+    location: { $concat: ["From ", "$from"]}, 
+    nutrients: {$split: ["$nutrients", ", "]},
+    organic: 1,
+    desc: "$description",
+    type: 1,
+    category: 1
+}}]);
