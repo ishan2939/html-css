@@ -88,12 +88,20 @@
     cursor: pointer;
     text-transform: capitalize;
 }
-.container .content .header .body{
+/* .container .content .body{
     width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    row-gap: 30px;
+} */
+.container .content .body .message{
+    /* width: 100%; */
+    color: #0e4f55;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 30px;
 }
 .container .content .body .productscontainer{
     display: flex;
@@ -107,6 +115,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .container .content .body .productscontainer .eachproducts .product{
     color: #e2a83b;
     display: flex;
@@ -140,6 +149,23 @@
     font-weight: bold;
     min-width: 90px;
 }
+.container .content .body .productscontainer .eachproducts .product .details .price .cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .content .body .productscontainer .eachproducts .product .details .price .cart a{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0b769;
+    border-radius: 20px;
+    cursor: pointer;
+} 
+.container .content .body .productscontainer .eachproducts .product .details .price .cart a:hover{
+    background-color: #dd9207;
+}
 .container .content .body .productscontainer .eachproducts .product .details .name{
     width: 130px;
     display: block;
@@ -153,22 +179,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: 16px;
-    cursor: pointer;
     transition: .3s;
-}
-.container .content .body .productscontainer .eachproducts .product .details .price .cart{
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #e0b769;
-    border-radius: 20px;
-}
-/* .container .content .body .productscontainer .eachproducts .product .details .price .cart img{
-    width: 15px;
-} */
-.container .content .body .productscontainer .eachproducts .product .details .price .cart:hover{
-    background-color: #dd9207;
 }
 
 @media only screen and (max-width: 1400px) {

@@ -5,14 +5,14 @@ const path = require('path');
 
 const dotenv = require('dotenv');
 
-dotenv.config({path: path.join(__dirname, 'config', '.env')});
+dotenv.config({path: path.join(__dirname,'..' ,'config', '.env')});
 
 const User = require('../models/user');
 
 
 exports.getSignUpPage = async (req, res) => {
     try{
-        return res.render('signup');
+        return res.render('signup', {error: ''});
 
     }catch(err){
         return res.status(400).json({ status: "Failure", error: err.message });
@@ -21,7 +21,7 @@ exports.getSignUpPage = async (req, res) => {
 
 exports.getLoginPage = async (req, res) => {
     try{
-        return res.render('login');
+        return res.render('login', {error: ''});
 
     }catch(err){
         return res.status(400).json({ status: "Failure", error: err.message });
@@ -34,13 +34,13 @@ exports.register = async (req, res) => {
         const {fname, username, email, password} = req.body; //get user details
 
         if(!(fname && username && email && password)){   //apply validation
-            return res.status(400).send("Not sufficient data provided.");
+            return res.render('signup', {error: 'Not sufficient data provided.'});   //show error
         }
         
         const ifUserExists = await User.findOne({ email : email.toLowerCase() });   //get user with entered email
 
         if(ifUserExists){   //if user does exists
-            return res.status(409).send("User already exists.");    //show error
+            return res.render('signup', {error: 'User alredy exists.'});   //show error
         }
 
         //if user doesn't exists
@@ -64,10 +64,9 @@ exports.register = async (req, res) => {
 
         user.token = token; //add token to user
 
-        res.status(201).json({
-            "status": "Registered successfully",    
-            "user" : user   //pass user along with token as response
-        });
+        alert('User registered successfully.');
+
+        return res.redirect('/login');
     }
     catch(err){ //handle error
         console.log(err);
@@ -100,10 +99,15 @@ exports.login = async (req, res) => {
     
                 userExists.token = token;   //add it to user
     
-                return res.status(200).json({
-                    "status": "Logged in successfully",
-                    "user": userExists  //pass user along with token as response
+                const cookie = {
+                    token: token
+                };
+
+                res.cookie("token", cookie, {
+                    httpOnly: true,
+                    expires: new Date(Date.now() + (2*24*60*60*1000))
                 });
+                return res.redirect('/');
             }
             return res.status(400).send("Invalid credentials"); //if password is incorrect then show error
         }
@@ -114,3 +118,7 @@ exports.login = async (req, res) => {
         return res.status(400).send(err.message);
     }
 };
+
+exports.logout = async (req, res) => {
+
+}

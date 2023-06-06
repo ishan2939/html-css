@@ -1,6 +1,7 @@
 const express = require('express');
 require('./config/database').connect_to_DB();
 const path =  require('path');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
@@ -8,6 +9,7 @@ const router = require('./routes/routes');
 
 app.use(express.json());
 
+app.use(cookieParser());
 app.disable("etag");
 
 app.set('view engine', 'ejs');

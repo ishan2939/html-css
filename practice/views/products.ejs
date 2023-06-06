@@ -22,13 +22,13 @@
                 <div class="header">
                     <div class="title">Products</div>
                     <div class="search">
-                        <form onsubmit="submit(event)" action="">
-                            <input type="search" placeholder="Enter product name here..." required>
+                        <form action="/searchproducts">
+                            <input type="search" placeholder="Enter product name here..." name="name" required>
                             <button type="submit">
                                 <svg stroke="#fff" fill="#fff" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g><path fill="none" d="M0 0h24v24H0z"></path><path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"></path></g></svg>
                             </button>
                         </form>
-                        <form onsubmit="submit(event)" action="">
+                        <form action="/products">
                             <select name="property" required>
                                 <option value="">Choose option to sort</option>
                                 <option value="name">Name</option>
@@ -39,10 +39,11 @@
                     </div>
                 </div>
                 <div class="body">
+                    <div class="message"><%= msg %></div>
                     <div class="productscontainer">
                         <% for(p of JSON.parse(products)) {%>
                             <div class="eachproducts">
-                                <a class="product" href="/product/<%= p.p_id %>">
+                                <div class="product">
 
                                     <div class="image">
                                         <div class="icon">
@@ -55,30 +56,35 @@
                                         </div>
                                         <div class="price">
                                             <div class="cart">
-                                                <svg stroke="#fff" fill="#fff" stroke-width="0" viewBox="0 0 20 20"
-                                                    height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
-                                                    </path>
-                                                </svg>
+                                                <a href="/addtocart?id=<%= p.p_id %>&route=products/?page=<%= current %>">
+                                                    <svg stroke="#fff" fill="#fff" stroke-width="0" viewBox="0 0 20 20"
+                                                        height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
+                                                        </path>
+                                                    </svg>
+                                                </a>
                                             </div>
                                             $<%= p.price %>
-                                                <svg stroke="#eeca89" fill="#eeca89" stroke-width="0"
-                                                    viewBox="0 0 256 512" height="1em" width="1em"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z">
-                                                    </path>
-                                                </svg>
+                                                <a href="/product/<%= p.p_id %>">
+
+                                                    <svg stroke="#eeca89" fill="#eeca89" stroke-width="0"
+                                                        viewBox="0 0 256 512" height="1em" width="1em"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z">
+                                                        </path>
+                                                    </svg>
+                                                </a>
                                         </div>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                             <% } %>
                     </div>
                     <div class="pagination">
                         <% for(let p=1; p<=pages;p++) { %>
-                            <a class="page <%= (p==current)? 'active': ''  %>" href="/products/<%= p %>">
+                            <a class="page <%= (p==current)? 'active': ''  %>" href="/products?page=<%= p %>">
                                 <div>
                                     <%= p %>
                                 </div>
@@ -89,7 +95,7 @@
             </div>
     </div>
 
-    <script>
+    <!-- <script>
         function submit(e) {
             e.preventDefault();
             console.log("hello");
@@ -100,7 +106,7 @@
             fetch(url)
                 .then((data) => console.log(data));
         }
-    </script>
+    </script> -->
 </body>
 
 </html>

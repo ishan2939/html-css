@@ -54,7 +54,6 @@ exports.getProductById = async (req, res) => {
     try {
         Product.aggregate([{$match: {_id : new mongoose.Types.ObjectId(req.params.id)}} , 
         {$project: {
-            _id: 0, 
             name: "$productName", 
             icon: 1, 
             price: {$concat: [{ $convert: { input: "$price", to: "string", onError: 0, onNull: 0}}, " $ for ", "$quantity"]}, 
@@ -67,6 +66,8 @@ exports.getProductById = async (req, res) => {
         }}])
         .exec()
         .then((result) => {
+            if(result)
+            
             return res.render('product', { path: 'products', title: result[0].name, response: result });
         })
         .catch((err) => {
@@ -211,38 +212,36 @@ exports.getProductFromCategory = async (req, res) => {
 
 exports.getProductsPage = async (req , res) => {
     try{
+        
+        const limit = 10;
+        let skip = 0;
+        let products = [];
+
+        if(req.query.page && req.query.page>0)
+            skip = (req.query.page - 1) * limit; 
+        
+        if(req.query.property){
+            sort = req.query.property;
+            
+            if(sort=='name')
+                products  =  await Product.find({}, {p_id: "$_id", _id: 0, name: "$productName", icon:1, price: 1}).sort({productName: 1});
+            else
+                products  =  await Product.find({}, {p_id: "$_id", _id: 0, name: "$productName", icon:1, price: 1}).sort({price: 1});
+            return res.render('products', {path: 'products', products: JSON.stringify(products),  pages: 0, current: 0, msg: 'products sorted by ' + sort});        
+        }
+        else
+            products  =  await Product.find({}, {p_id: "$_id", _id: 0, name: "$productName", icon:1, price: 1}).skip(skip).limit(limit);
 
         const total = await Product.countDocuments({});
-
+ 
         const pages = Math.ceil(total/10);
-        
-        /*Product.aggregate([{$project: {p_id: "$_id", _id: 0, name: "$productName", icon: 1, price: 1}}, {$limit: 10}])
-        .exec()
-        .then((result) => res.render('products', {products: result, pages, current: 1}))
-        .catch((err) => {throw err});*/
 
-        let firstPage = await Product.find({}, {p_id: "$_id", _id: 0, name: "$productName", icon: 1, price: 1}).limit(10);
-
-        firstPage = JSON.stringify(firstPage);
-        return res.render('products', {path: 'products', products: firstPage, pages, current: 1});
+        if(products.length==0 || (req.query.page && req.query.page<=0))
+            return res.redirect('/products');
+    
+        return res.render('products', {path: 'products', products: JSON.stringify(products),  pages, current: (req.query.page>0)?req.query.page:1, msg: ''});
 
     }catch(err){
-        res.status(400).json({ status: "Failure", error: err.message });
-    }
-};
-
-exports.getProductsBasedOnPagination = async (req, res) => {
-    try{
-
-        const limit = 10;
-        let skip = (req.params.page - 1) * limit; 
-        const products  =  await Product.find({}, {p_id: "$_id", _id: 0, name: "$productName", icon:1, price: 1}).skip(skip).limit(limit);
-
-        const total = await Product.countDocuments({});
-
-        const pages = Math.ceil(total/10);
-        return res.render('products', {path: 'products', products: JSON.stringify(products),  pages, current: req.params.page});
-    }catch(err) {
         res.status(400).json({ status: "Failure", error: err.message });
     }
 };
@@ -250,14 +249,18 @@ exports.getProductsBasedOnPagination = async (req, res) => {
 exports.getSearchedProduct = async (req, res) => {
     try{
 
-        const regex = new RegExp(req.params.name, 'i');   
+        const regex = new RegExp(req.query.name, 'i');   
         Product.aggregate([
             { $match: { productName: { $regex: regex } } },
             { $project: { p_id: "$_id", _id: 0, name: "$productName", icon: 1, price: 1 } }
         ])
         .exec()
         .then((result) => {
-            return res.render('products', {path: 'products', products: JSON.stringify(result),  pages: 0, current: 0});
+
+            let msg = 'Search result for "' + req.query.name + '"';
+            if(result.length==0)
+                msg = "We can't find the products that you are looking for."
+            return res.render('products', {path: 'products', products: JSON.stringify(result),  pages: 0, current: 0, msg: msg});
         })
         .catch((err) => {throw err});
 

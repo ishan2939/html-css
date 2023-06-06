@@ -14,7 +14,12 @@
     <div class="container">
         <div class="content">
             <div class="part1">
-                <form action="/registeruser" method="POST">
+                <% if(error) {%>
+                    <div class="error">
+                        <%= error %>
+                    </div>
+                <% } %>
+                <form action="/signup" method="POST">
                     <label for="fname">First Name <span>*</span></label>
                     <input type="text" id="fname" name="fname" placeholder="Add your firstname here..." required>
     
@@ -59,7 +64,7 @@
                     </div>
                 </div>
                 <div class="row2">
-                    <img src="http://localhost:3000/public/logo_white.png">
+                    <img src="http://localhost:3000/public/logo2.png">
                 </div>
                 <div class="row3">
                     <div class="iconContainer">

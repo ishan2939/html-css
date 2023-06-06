@@ -12,7 +12,7 @@
     /*display: flex;
     justify-content: center;
     align-items: center;*/
-    background: url('http://localhost:3000/public/pngwing.com (5).png');
+    background: url('http://localhost:3000/public/assests/pngwing.com (5).png');
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -65,7 +65,7 @@
     background: #0e4f55;
     border-radius: 30px;
 }
-.container .content .part1 .cart button{
+.container .content .part1 .cart a{
     outline: none;
     border: none;
     background: #e2a83b;
@@ -81,18 +81,20 @@
     cursor: pointer;
     border: 3px solid #e2a83b;
     transition: .5s;
+    text-decoration: none;
+    font-weight: bold;
 }
-.container .content .part1 .cart button:hover{
-    background: none;
+.container .content .part1 .cart a:hover{
+    background: rgba(243, 159, 4, 0.2);
     color: #e2a83b;
 }  
-.container .content .part1 .cart button .carticon{
+.container .content .part1 .cart a .carticon{
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;
 }
-.container .content .part1 .cart button:hover .carticon{
+.container .content .part1 .cart a:hover .carticon{
     color: #e2a83b;
 }
 .container .content .part1 .desc{

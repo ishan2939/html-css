@@ -29,7 +29,7 @@
 .container .content .body .categories{
     display: flex;
     flex-wrap: wrap;
-    gap: 30px 0px;
+    gap: 25px 0px;
 }
 .container .content .body .categories .category{
     display: flex;

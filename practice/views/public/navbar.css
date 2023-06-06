@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px;
+    padding: 5px 30px;
     margin-bottom: 30px;
     background-color: #0e4f55;
 }
@@ -10,9 +10,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px 15px;
 }
 .container .navbar .logo img{
-    width: 50px;
+    width: 40px;
 }
 .container .navbar ul{
     list-style-type: none;
@@ -23,15 +24,26 @@
 }
 .container .navbar ul li{
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .container .navbar ul li a{
     color: #fff;
     text-decoration: none;
     text-transform: capitalize;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 16px;
 }
 .active{
     background-color: #e2a83b;
+}
+.icons {
+    font-size: 20px !important;
+    padding: 10px !important;
+    margin: 0px 10px;
 }

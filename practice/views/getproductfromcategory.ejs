@@ -10,50 +10,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="http://localhost:3000/public/getproductfromcategory.css">
     <link rel="stylesheet" href="http://localhost:3000/public/navbar.css">
-    <title><%= path %></title>
+    <title>
+        <%= path %>
+    </title>
 </head>
 
 <body>
     <div class="container">
         <%- include('./includes/navbar.ejs') %>
-        <div class="content">
-            <div class="header">
-                <%= header %>
-            </div>
-            <div class="body">
-                <div class="productscontainer">
-                    <% for(r of response) {%>
-                        <div class="eachproducts">
-                            <a class="product" href="/product/<%= r.p_id %>">
+            <div class="content">
+                <div class="header">
+                    <%= header %>
+                </div>
+                <div class="body">
+                    <div class="productscontainer">
+                        <% for(r of response) {%>
+                            <div class="eachproducts">
+                                <div class="product">
 
-                                <div class="image">
-                                    <div class="icon">
-                                        <%= r.icon %>
-                                    </div>
-                                </div>
-                                <div class="details">
-                                    <div class="name">
-                                        <%= r.name %>
-                                    </div>
-                                    <div class="price">
-                                        <div class="cart">
-                                            <svg stroke="#fff" fill="#fff" stroke-width="0" viewBox="0 0 20 20" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
+                                    <div class="image">
+                                        <div class="icon">
+                                            <%= r.icon %>
                                         </div>
-                                        $<%= r.price %>
-                                            <svg stroke="#eeca89" fill="#eeca89" stroke-width="0" viewBox="0 0 256 512"
-                                                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z">
-                                                </path>
-                                            </svg>
+                                    </div>
+                                    <div class="details">
+                                        <div class="name">
+                                            <%= r.name %>
+                                        </div>
+                                        <div class="price">
+                                            <div class="cart">
+                                                <a href="/addtocart?id=<%= r.p_id %>&route=categories/<%= header %>">
+                                                    <svg stroke="#fff" fill="#fff" stroke-width="0" viewBox="0 0 20 20"
+                                                        height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
+                                                        </path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                            $<%= r.price %>
+                                                <a href="/product/<%= r.p_id %>">
+
+                                                    <svg stroke="#eeca89" fill="#eeca89" stroke-width="0"
+                                                        viewBox="0 0 256 512" height="1em" width="1em"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z">
+                                                        </path>
+                                                    </svg>
+                                                </a>
+                                        </div>
                                     </div>
                                 </div>
-                            </a>
-                        </div>
-                    <% } %>
+                            </div>
+                            <% } %>
+                    </div>
                 </div>
             </div>
-        </div>
     </div>
 </body>
 

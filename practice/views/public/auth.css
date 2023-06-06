@@ -8,15 +8,16 @@
 .container{
     min-width: 98vw;
     min-height: 100vh;
+    background-color: #0e4f55;
 }
 .container .content {
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
+    padding: 70px 0px;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #0e4f55;
 }
 .container .content .part1{
     width: 40%;
@@ -24,10 +25,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 20px;
+    row-gap: 15px;
 }
 .container .content .part2{
     width: 60%;
+}
+.container .content .part1 .error{
+    min-width: 300px;
+    text-align: center;
+    padding: 10px 20px;
+    border: 1px solid #D2042D;
+    text-transform: capitalize;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #af0023;
+    margin-bottom: 20px;
 }
 .container .content .part1 form{
     width: fit-content;

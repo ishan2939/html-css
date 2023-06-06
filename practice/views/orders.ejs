@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= path %>
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="http://localhost:3000/public/cart.css">
+    <link rel="stylesheet" href="http://localhost:3000/public/navbar.css">
+</head>
+<body>
+    <div class="container">
+        <%- include('./includes/navbar.ejs') %>
+            <div class="content">
+                <div class="orderlist">
+                    <% for(o of response) {%>
+                        <div class="date"><%= o.createdAt %></div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Product name</td>
+                                    <td>Price</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for(p of o.products) {%>
+                                    <tr>
+                                        <td><%= p.p_id.productName %></td>
+                                        <td>$<%= p.p_id.price %></td>
+                                    </tr>
+                                <% } %>
+                                <tr>
+                                    <th>Total: $<%= o.total %></th>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    <% } %>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
