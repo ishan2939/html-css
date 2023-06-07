@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,15 +8,28 @@
     <title>NodeFarm</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="http://localhost:3000/public/home.css">
     <link rel="stylesheet" href="http://localhost:3000/public/navbar.css">
 </head>
+
 <body>
     <div class="container">
-        <div class="content">
-            <%- include('./includes/navbar.ejs') %>
-        </div>
+        <%- include('./includes/navbar.ejs') %>
+            <div class="content">
+                <div id="part1">
+                    <div class="welcome">
+                        <div class="message">w🍊rld's m🍓st</div>
+                            <img src="/public/assests/bg7-removebg-preview.png" alt="Fruits">
+                        <div class="message">🍎rganic farm</div>
+                    </div>
+                </div>
+                <div id="part2"></div>
+                <div id="part3"></div>
+                <div id="part4"></div>
+            </div>
     </div>
 </body>
+
 </html>

@@ -64,13 +64,12 @@ exports.register = async (req, res) => {
 
         user.token = token; //add token to user
 
-        alert('User registered successfully.');
 
         return res.redirect('/login');
     }
     catch(err){ //handle error
         console.log(err);
-        return res.status(400).send(err.message);
+        return res.render('signup', {error: err.message});
     }
 };
 
@@ -80,7 +79,7 @@ exports.login = async (req, res) => {
         const { email, password } = req.body;   //get email password
 
         if (!(email && password)) { //if they don't exist
-            return res.status(400).send("Not sufficient data provided");    //throw error
+            return res.render('login', {error: 'not sufficient data provided.'});      //throw error
         }
 
         const userExists = await User.findOne({ email: email.toLowerCase() });  //get user with entered email
@@ -109,16 +108,22 @@ exports.login = async (req, res) => {
                 });
                 return res.redirect('/');
             }
-            return res.status(400).send("Invalid credentials"); //if password is incorrect then show error
+            return res.render('login', {error: 'Invalid credentials'}); //if password is incorrect then show error
         }
-        return res.status(404).send("No such user exists.");    //if user doesn't exists then show error
+        return res.render('login', {error: 'no such user exists.'});    //if user doesn't exists then show error
     }
     catch(err){ //handle error
         console.log(err);
-        return res.status(400).send(err.message);
+        return res.render('login', {error: err.message});
     }
 };
 
 exports.logout = async (req, res) => {
+    try{
+        res.clearCookie("token");
+        return res.redirect('/signup');
+    }catch(err){
+        return res.redirect('/');
+    }
 
 }

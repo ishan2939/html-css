@@ -1,3 +1,2 @@
 
 create home page
-check products page sort and search code

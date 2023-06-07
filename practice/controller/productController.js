@@ -66,9 +66,10 @@ exports.getProductById = async (req, res) => {
         }}])
         .exec()
         .then((result) => {
-            if(result)
-            
-            return res.render('product', { path: 'products', title: result[0].name, response: result });
+            if(result.length!=0){
+                return res.render('product', { path: 'products', title: result[0].name, response: result });
+            }
+            return res.redirect('/');
         })
         .catch((err) => {
             throw err;
@@ -184,7 +185,9 @@ exports.getCategories = async (req, res) => {
             { $project: { category: "$_id", _id: 0, icon: { $arrayElemAt: ["$icon", 0] } } },
             { $sort: { category: 1 } }])
             .exec()
-            .then((result) => res.render('categories', {path: 'categories', response: result }))
+            .then((result) => {
+                return res.render('categories', {path: 'categories', response: result })
+            })
             .catch((err) => { throw err });
 
     } catch (err) {
@@ -201,7 +204,9 @@ exports.getProductFromCategory = async (req, res) => {
             { $project: { p_id: "$_id",_id: 0, icon: "$icon", name: "$productName", price: "$price" } }])
             .exec()
             .then((result) => {
-                return res.render('getproductfromcategory', { path: 'categories', header: req.params.category, response: result })
+                if(result.length!=0)
+                    return res.render('getproductfromcategory', { path: 'categories', header: req.params.category, response: result })
+                res.redirect('/categories');
             })
             .catch((err) => { throw err });
     } catch (err) {

@@ -7,7 +7,7 @@ exports.getMyOrders = async (req, res) => {
         Order.find({user_id : req.user.user_id}).populate('products.p_id', {'productName': 1, 'price': 1})
         .exec()
         .then((response) => {
-            console.log(response);
+
             return res.render('orders', {path: "orders", response: response});
         });
 

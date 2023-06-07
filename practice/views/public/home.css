@@ -14,33 +14,62 @@
     width: 100%;
     margin: 0;
 }
-/*.container .navbar{
+.container .content #part1{
+    width: 100%;
+    height: 91vh;
+    background: url('/public/assests/bg1.png'), 
+        url('/public/assests/bg2.png'), 
+        url('/public/assests/pngwing.com (12).png'), 
+        url('/public/assests/pngwing.com (3).png'), 
+        url('/public/assests/pngwing.com (4).png'),
+        url('/public/assests/pngwing.com (7).png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left, right, right, right,left, left;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 20px 30px;
+    background-color: rgb(223,241,217);
 }
-.container .navbar .logo{
+/* .container .content #part1 {
+    animation: backgroundAnimation 5s infinite;
+  }
+  
+  @keyframes backgroundAnimation {
+    0% {
+      background-size: 10%;
+    }
+    50%{
+        background-size: 15%;
+    }
+    100% {
+      background-size: 10%;
+    }
+  } */
+.container .content #part1 .welcome{
+    padding: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.container .navbar .logo img{
-    width: 50px;
+.container .content #part1 .welcome .message{
+    font-family: 'Rubik', sans-serif;
+    font-size: 60px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 
+    -3px -3px 0 #000,
+    3px -3px 0 #000,
+    -3px 3px 0 #000,
+    3px 3px 0 #000;
 }
-.container .navbar ul{
-    list-style-type: none;
+.container .content #part1 .welcome .image{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    column-gap: 30px;
-    font-size: 18px;
+    position: relative;
 }
-.container .navbar ul li{
-    cursor: pointer;
+.container .content #part1 .welcome  img{
+    width: 300px;
 }
-.container .navbar ul li a{
-    color: #000;
-    text-decoration: none;
-    text-transform: capitalize;
-}*/

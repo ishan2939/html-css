@@ -20,6 +20,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/', router);
 
+app.get('*',(req, res) => {
+    res.redirect('/');
+});
+
 app.listen(3000, () => {
     console.log("Server started at port 3000...");
 });

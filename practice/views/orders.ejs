@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,39 +11,58 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="http://localhost:3000/public/cart.css">
+    <link rel="stylesheet" href="http://localhost:3000/public/orders.css">
     <link rel="stylesheet" href="http://localhost:3000/public/navbar.css">
 </head>
+
 <body>
     <div class="container">
         <%- include('./includes/navbar.ejs') %>
             <div class="content">
                 <div class="orderlist">
-                    <% for(o of response) {%>
-                        <div class="date"><%= o.createdAt %></div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <td>Product name</td>
-                                    <td>Price</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <% for(p of o.products) {%>
-                                    <tr>
-                                        <td><%= p.p_id.productName %></td>
-                                        <td>$<%= p.p_id.price %></td>
-                                    </tr>
-                                <% } %>
-                                <tr>
-                                    <th>Total: $<%= o.total %></th>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <% if(response!='') { %>
+                        <div class="title">🥡 Your orders 🥡</div>
+                        <div class="orders">
 
+                            <% for(o of response) {%>
+                                <div class="order">
+                                    
+                                    <div class="date">
+                                        <%= o.createdAt %>
+                                    </div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <td>Product name</td>
+                                                <td>Price</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% for(p of o.products) {%>
+                                                <tr>
+                                                    <td>
+                                                        <%= p.p_id.productName %>
+                                                    </td>
+                                                    <td>$<%= p.p_id.price %>
+                                                    </td>
+                                                </tr>
+                                            <% } %>
+                                            <tr>
+                                                <td colspan="2">Total: $<%= o.total %>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                        
+                                </div>
+                            <% } %>
+                        </div>
+                    <% }else { %>
+                        <div class="title">No orders found 😢</div>
                     <% } %>
                 </div>
             </div>
     </div>
 </body>
+
 </html>

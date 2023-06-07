@@ -5,12 +5,13 @@ const dotenv = require('dotenv');
 
 dotenv.config({path: path.join(__dirname, '..', 'config', '.env')});
 
-const verify = (req, res, next) => {
+exports.verifyToEnter = (req, res, next) => {
 
-    const token = req.body.token || req.query.token || req.headers["x-access-token"] || req.cookies['token'].token;   //get token
+    const token = req.body.token || req.query.token || req.headers["x-access-token"] || (req.cookies['token'])?req.cookies['token'].token:undefined;   //get token
 
     if(!token){ //if it doesn't exists then throw error
-        return res.status(403).send("A token is required for authentication.");
+        return res.redirect('/signup');
+        //return res.status(403).send("A token is required for authentication.");
     }
 
     try{    //if it does exists
@@ -20,10 +21,18 @@ const verify = (req, res, next) => {
     }
     catch(err){ //handle error
         console.log(err.message);
-        return res.status(401).send("Invalid Token");
+        return res.redirect('/signup');
     }
     
     return next();
 };
 
-module.exports = verify;
+exports.verifyToLeave = (req, res, next) => {
+    const token = req.body.token || req.query.token || req.headers["x-access-token"] || (req.cookies['token'])?req.cookies['token'].token:undefined;   //get token
+
+    if(token){ //if it doesn't exists then throw error
+        return res.redirect('/');
+        //return res.status(403).send("A token is required for authentication.");
+    }
+    return next();
+};
