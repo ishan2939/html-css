@@ -7,7 +7,7 @@ dotenv.config({path: path.join(__dirname, '..', 'config', '.env')});
 
 exports.verifyToEnter = (req, res, next) => {
 
-    const token = req.body.token || req.query.token || req.headers["x-access-token"] || (req.cookies['token'])?req.cookies['token'].token:undefined;   //get token
+    const token = (req.cookies['token'])?req.cookies['token'].token:undefined;   //get token
 
     if(!token){ //if it doesn't exists then throw error
         return res.redirect('/signup');
