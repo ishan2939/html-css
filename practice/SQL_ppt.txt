@@ -1,0 +1,78 @@
+constraints are rules that you can imply on the data in a table. It allows you to restrict only specific data that meets the regulations to go to a table. To put it simply, only if the data meets the constraint’s rules, the insert operation will be successful, or else it will be aborted.
+
+Constraints in SQL helps to maintain the accuracy, integrity, and reliability of a table’s data. It can create them at a column or table level. If you declare constraints at the column level, it will apply them to a single column. On the other hand, if you declare them at the table level, it will implement them in more than one column. You can create constraints in SQL while creating a table using the CREATE TABLE command or later using the ALTER TABLE command. If you make a constraint with the ALTER TABLE command, the creation will only be successful if all the existing data meets the constraint rules.
+
+-----------------------------------------------------------------------------------
+
+Not Null Constraint in SQL
+
+By default, SQL tables can accept null values. But if you want to restrict columns from taking null values, you can use the NOT NULL constraint in SQL. Using this constraint will simply prohibit anyone from inserting a new row in the table while keeping the field for this column null. This is useful in scenarios where you need the user to put input for something necessarily.
+
+--------------------------------------------------------------------------------------
+
+Unique constraint
+
+As the name gives out, the UNIQUE constraint prohibits any duplicate values in a column. If a column has a UNIQUE constraint, it will not allow any similar row entry for that field. You can declare more than one column as UNIQUE in a table. In the example below, you will take the same Student1 table and add an Email_Id column and keep it unique. You will also have to insert a duplicate value in the Email_Id column and see the output.
+
+
+--------------------------------------------------------------------------------------
+
+1. Constraints can be named: When defining a constraint, you can provide a name for it. This allows you to have more descriptive and meaningful names for your constraints, making it easier to understand their purpose when working with the database.
+
+Constraint names should be meaningful: When naming a constraint, choose a name that reflects the purpose or intention of the constraint. For example, if you have a unique constraint on a column that represents email addresses, a suitable name could be "UNQ_Email_Address".
+
+Constraint names should be unique within a table: Each constraint within a table must have a unique name. This helps avoid confusion and ensures that you can easily refer to a specific constraint when needed.
+
+Constraint names can be used in error messages: When a constraint violation occurs, the database engine often includes the name of the constraint in the error message. This can be helpful for quickly identifying which constraint is causing the issue.
+
+Constraint names can be used for modification or deletion: If you need to modify or remove a constraint in the future, having a named constraint allows you to reference it directly by its name. This can simplify maintenance tasks and prevent accidental modifications to the wrong constraint.
+
+Constraint names are optional: While it's good practice to provide names for your constraints, it's not mandatory. If you don't provide a name, the database system will generate a default name for the constraint. However, the automatically generated names may not be as meaningful or intuitive.
+
+To name a constraint in SQL, you typically use the CONSTRAINT keyword followed by the desired name when defining the constraint. Here's an example of how to create a named unique constraint:
+
+ALTER TABLE your_table
+ADD CONSTRAINT UNQ_Email_Address UNIQUE (email);
+
+--------------------------------------------------------------------------------------
+
+2. Constraints can be enabled or disabled: Constraints can be enabled or disabled based on your needs. Disabling a constraint temporarily suspends its enforcement, allowing you to perform certain operations that would otherwise violate the constraint. Enabling the constraint again reactivates its enforcement.
+
+Disabling Constraints: Disabling a constraint means that the database system will no longer enforce the constraint for subsequent data modification operations. This can be useful in scenarios where you need to perform certain operations that would violate the constraint temporarily. For example:
+
+ALTER TABLE your_table
+DISABLE CONSTRAINT your_constraint;
+
+In this example, your_table is the name of the table containing the constraint you want to disable, and your_constraint is the name of the constraint you want to disable.
+
+Performing Operations with Disabled Constraints: Once a constraint is disabled, you can perform operations that would normally violate the constraint. For instance, you can insert, update, or delete data that does not comply with the disabled constraint. However, keep in mind that these operations should still adhere to other data integrity rules to maintain the integrity of your data.
+
+Enabling Constraints: Enabling a constraint means that the database system will resume enforcing the constraint for subsequent data modification operations. It ensures that any new data modifications adhere to the constraint rules. To enable a previously disabled constraint, you would use the following syntax:
+
+ALTER TABLE your_table
+ENABLE CONSTRAINT your_constraint;
+
+--------------------------------------------------------------------------------------
+
+3. Constraints can be dropped
+
+ALTER TABLE your_table
+DROP CONSTRAINT your_constraint;
+
+--------------------------------------------------------------------------------------
+
+4. Constraints are checked during data modification: Whenever a modification (insert, update, delete) is made to a table, the constraints defined on that table are automatically checked to ensure that the data modifications maintain data integrity. If a constraint violation occurs, the operation is rejected.
+
+--------------------------------------------------------------------------------------
+
+5. Constraints are part of the table definition: Constraints are defined along with the table structure, specifying the rules that the data in the table must adhere to. This means that constraints travel with the table, providing a self-contained mechanism for data integrity.
+
+--------------------------------------------------------------------------------------
+
+6. Constraints can improve query performance: Constraints provide the database optimizer with valuable information about the data and its relationships. With this information, the optimizer can make better decisions about query execution plans, resulting in improved performance.
+
+--------------------------------------------------------------------------------------
+
+Constraints play a vital role in maintaining data integrity and enforcing business rules in SQL databases. They provide a powerful mechanism to define and enforce rules on data, improving data quality and reducing the chances of data corruption or inconsistency.
+
+Constraints are not only for data validation: While constraints are commonly used for data validation, they can also define relationships between tables (e.g., foreign key constraints) and enforce referential integrity.
