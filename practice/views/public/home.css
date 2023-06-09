@@ -21,74 +21,72 @@
     width: 100%;
     /* height: 91vh; */
     padding: 70px 0px;
-    /* background: url('/public/assests/bg1.png'),
-        url('/public/assests/bg2.png'),
-        url('/public/assests/pngwing.com (12).png'),
-        url('/public/assests/pngwing.com (3).png'),
-        url('/public/assests/pngwing.com (4).png'),
-        url('/public/assests/pngwing.com (7).png'); */
-    background:  url('/public/assests/fruits2.png'), url('/public/assests/pngwing.com (12).png'), url('/public/assests/bg (1).png');
+    background: url('/public/assests/fruits2.png'), url('/public/assests/pngwing.com (12).png'), url('/public/assests/bg (1).png');
     background-repeat: no-repeat;
     background-size: contain, contain, 25%;
     background-position: right, right, right bottom;
     background-attachment: fixed;
-    /* background-position: left, right, right, right,left, left; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: start;
     background-color: rgb(223, 241, 217);
+    animation: backgroundAnimation 7s infinite;
 }
 
-/* .container .content #part1 {
-    animation: backgroundAnimation 5s infinite;
-  }
-  
-  @keyframes backgroundAnimation {
+
+@keyframes backgroundAnimation {
     0% {
-      background-size: 10%;
+        background-position: right, right, right bottom;
     }
-    50%{
-        background-size: 15%;
+
+    50% {
+        background-position: center, bottom, right bottom;
     }
+
     100% {
-      background-size: 10%;
+        background-position: right, right, right bottom;
     }
-  } */
+}
+
 .container .content #part1 .welcome {
     padding: 120px 40px;
     /* display: flex;
     justify-content: center;
     align-items: center; */
 }
-.container .content #part1 .welcome .message:nth-child(2){
+
+.container .content #part1 .welcome .message:nth-child(2) {
     font-size: 100px;
 }
-.container .content #part1 .welcome .desc{
+
+.container .content #part1 .welcome .desc {
     max-width: 50%;
     margin: 30px 0px;
 }
 
-.container .content #part1 .welcome .button a{
+.container .content #part1 .welcome .button a {
     background: #da971c;
     color: #fff;
     padding: 10px 30px;
     text-decoration: none;
     border-radius: 5px;
 }
-.container .content #part1 .welcome .button a svg{
+
+.container .content #part1 .welcome .button a svg {
     margin-right: 10px;
 }
+
 .container .content #part1 .welcome .message {
     font-family: 'Rubik', sans-serif;
     font-size: 80px;
     text-transform: uppercase;
-    color: #0e4f55;
+    color: #fff;
     text-shadow:
-        -3px -3px 0 #fff,
-        3px -3px 0 #fff,
-        -3px 3px 0 #fff,
-        3px 3px 0 #fff;
+        -3px -3px 0 #0e4f55,
+        3px -3px 0 #0e4f55,
+        -3px 3px 0 #0e4f55,
+        3px 3px 0 #0e4f55;
 }
 
 .container .content #part1 .welcome .image {
@@ -105,17 +103,244 @@
 }
 
 @keyframes float {
-    0%{
+    0% {
         transform: translateY(0px);
     }
-    50%{
+
+    50% {
         transform: translateY(-20px);
-    }100%{
+    }
+
+    100% {
         transform: translateY(0px);
     }
 }
-.container .content #part2{
+
+.container .content #part2 {
     width: 100%;
     height: 100vh;
-    background: rgb(241,246,250);
+    background: rgb(241, 246, 250);
+    /* background-image: url('/public/assests/pt2_8.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .content #part2 .best {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 40px;
+}
+
+.container .content #part2 .best .text .p1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.container .content #part2 .best .text .p2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px 0px;
+}
+
+.container .content #part2 .best .text ul {
+    list-style-type: none;
+    margin: 30px 0px;
+}
+
+.container .content #part2 .best .text ul li {
+    width: 100%;
+    margin: 20px 0px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.container .content #part2 .best .text ul li .iconcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .content #part2 .best .text ul li .iconcontainer .icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: #fff;
+    outline: 2px solid #fff;
+    outline-offset: -5px;
+}
+
+.container .content #part2 .best .text ul li:nth-child(1) .iconcontainer .icon {
+    background: #3e8a53;
+}
+
+.container .content #part2 .best .text ul li:nth-child(2) .iconcontainer .icon {
+    background: #f19b23;
+}
+
+.container .content #part2 .best .text ul li:nth-child(3) .iconcontainer .icon {
+    background: #d55823;
+}
+
+.container .content #part2 .best .text ul li .icondesc {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.container .content #part3 {
+    width: 100%;
+    height: 100vh;
+    background-image: url('/public/assests/pt2_8.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .content #part3 .services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .content #part3 .services .p1 {
+    font-size: 40px;
+}
+
+.container .content #part3 .services .p2 {
+    font-size: 35px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin: 20px 0px;
+}
+
+.container .content #part3 .services .p3 {
+    max-width: 500px;
+    text-align: center;
+}
+
+.container .content #part3 .services ul {
+    margin: 30px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+    list-style-type: none;
+}
+
+.container .content #part3 .services ul li {
+    background-color: #fff;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.container .content #part3 .services ul li .text {
+    margin: 20px 0px;
+    text-transform: capitalize;
+}
+
+.container .content #part3 .services ul li .text .title {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.container .content #part3 .services ul li .img img {
+    width: 70px;
+}
+
+.container .content #part4 {
+    width: 100%;
+    height: 100vh;
+    background-image: url('/public/assests/pt2_2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .content #part4 .about {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 50px;
+}
+
+.container .content #part4 .about .aboutus {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .content #part4 .about .aboutus ul {
+    width: 60%;
+    margin: 50px 0px;
+    display: flex;
+    justify-content: center;
+    column-gap: 40px;
+    align-items: center;
+    list-style-type: none;
+}
+
+.container .content #part4 .about .aboutus ul li {
+    width: 70px;
+    height: 70px;
+    font-size: 25px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    outline: 2px solid #fff;
+    outline-offset: -6px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.container .content #part4 .about .aboutus ul li:nth-child(1) {
+    background-color: #4867aa;
+}
+
+.container .content #part4 .about .aboutus ul li:nth-child(2) {
+    background-color: #1da1f2;
+}
+
+.container .content #part4 .about .aboutus ul li:nth-child(3) {
+    background-color: #f44336;
+}
+
+.container .content #part4 .about .aboutus ul li:nth-child(4) {
+    background-color: #3e8a53;
+}
+
+.container .content #part4 .about .aboutus ul li:hover {
+    transform: scale(1.2);
 }
