@@ -1,5 +1,4 @@
 CREATE DATABASE blog;
-
 SHOW databases;
 
 CREATE TABLE post(
@@ -214,3 +213,28 @@ SELECT title, author FROM post WHERE title LIKE "%a__";
 SELECT title FROM post WHERE title BETWEEN "My First Post" AND "The Past";
 /*Will give records not between my first post and the past*/
 SELECT title FROM post WHERE title NOT BETWEEN "My First Post" AND "The Past";
+
+SELECT author FROM post GROUP BY author;
+
+/*get total number of books each author has written*/
+SELECT author, COUNT(*) AS Total_books FROM post GROUP BY(author);
+
+/* get total price for each author books */
+SELECT author, SUM(price) AS TOTAL_BOOK_PRICE FROM post GROUP BY author ORDER BY TOTAL_BOOK_PRICE DESC;
+
+/* get author name with books written more than 3 */
+SELECT author, COUNT(*) AS TOTAL_BOOKS FROM post GROUP BY author HAVING TOTAL_BOOKS>3;
+
+DESC post;
+USE blog;
+ALTER TABLE post ADD jeel VARCHAR(22) not null;
+
+ALTER TABLE post CHANGE ishan ISHAN VARCHAR(30);
+
+ALTER TABLE post DROP jeel;
+
+ALTER TABLE post
+CHANGE JEEL jeel varchar(30);
+
+DROP DATABASE ecommerce;
+CREATE DATABASE ecommerce;
