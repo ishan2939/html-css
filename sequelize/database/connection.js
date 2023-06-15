@@ -5,15 +5,28 @@ const dotenv = require('dotenv');
 
 dotenv.config({ path: path.join(__dirname, '..', 'constants', '.env') });
 
-exports.connect_to_DB = () => {
+const sequelize = new Sequelize('ecommerce', process.env.MYSQL_USERNAME, process.env.MYSQL_PASSWORD, {
+    host: 'localhost',
+    dialect: 'mysql'
+});
 
-    const sequelize = new Sequelize('ecommerce', process.env.MYSQL_USERNAME, process.env.MYSQL_PASSWORD, {
-        host: 'localhost',
-        dialect: 'mysql'
-    });
+const connect_to_DB = async () => {
 
-    sequelize.authenticate()
-        .then(() => { console.log("Connected to DB successfully.") })
-        .catch((err) => { console.log(`Error occured while connecting to database: ${err.message}`) });
+    try{
+        await sequelize.authenticate();
+        console.log("Connected to DB successfully.");
+        return sequelize;
+    }
+    catch(err){
+        console.log(`Error occured while connecting to database: ${err.message}`);
+    }
 
 };
+
+const start = async () => {
+    await connect_to_DB();
+};
+
+start();
+
+module.exports = sequelize;

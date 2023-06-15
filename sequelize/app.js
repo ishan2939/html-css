@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 
 dotenv.config({path: path.join(__dirname, 'constants', '.env')});
 
-require('./database/connection').connect_to_DB();
+require('./database/connection');
 
 const app = express();
 
