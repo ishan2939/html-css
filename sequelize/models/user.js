@@ -1,37 +1,44 @@
-const { Sequelize, DataTypes } = require("sequelize");
+const { DataTypes } = require("sequelize");
+const sequelize  = require('../database/connection');
 
-const User = Sequelize.define("user", {
-    u_id: {
-        type:  DataTypes.INTEGER,
+const User = sequelize.define("user", {
+
+    userId: {
+        type: DataTypes.INTEGER,
         primaryKey: true,
-        AutoIncrement: true
+        autoIncrement: true
     },
 
     fname: {
         type: DataTypes.STRING(20),
         allowNull: false,
         validate: {
-            notEmpty: true,
-        },
+            notNull: {
+                msg: "First name is required."
+            },
+            notEmpty: {
+                msg: "First name can't be empty."
+            }
+        }
     },
 
     lname: {
         type: DataTypes.STRING(20),
-        defaultValue: "",
+        defaultValue: ""
     },
 
     fullName: {
         type: DataTypes.VIRTUAL,
-        get(){
+        get() {
             return this.getDataValue('fullName');
         },
-        set(){
+        set() {
             const fname = this.getDataValue('fname');
             const lname = this.getDataValue('lname');
 
             const fullName = fname[0].toUpperCase() + fname.slice(1) + ' ' +
                 lname[0].toUpperCase() + lname.slice(1);
-            
+
             this.setDataValue('fullName', fullName);
         }
     },
@@ -39,9 +46,16 @@ const User = Sequelize.define("user", {
     email: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
+        unique: {
+            msg: "Email already exists."
+        },
         validate: {
-            isEmail: true
+            notNull: {
+                msg: "Email is required."
+            },
+            isEmail: {
+                msg: "Invalid email."
+            }
         }
     },
 
@@ -49,7 +63,13 @@ const User = Sequelize.define("user", {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-            len: [8, "Infinity"],
+            notNull: {
+                msg: "Password is required."
+            },
+            len: {
+                args: [8, "Infinity"],
+                msg: "Password must be atleast 8 character long."
+            }
         },
     },
 
@@ -57,12 +77,30 @@ const User = Sequelize.define("user", {
         type: DataTypes.STRING,
         defaultValue: "male",
         validate: {
-            isIn: [["male", "female"]],
+            isIn: {
+                args: [["male", "female"]],
+                msg: "Entered value of gender is not valid."
+            }
         },
     },
 
-    b_date: {
+    birthDate: {
         type: DataTypes.DATE,
-        validate: {},
+        validate: {
+            isDate: {
+                msg: "Invalid date."
+            },
+            isBefore: {
+                args: new Date(new Date().setFullYear(new Date().getFullYear() - 10)).toLocaleDateString(),
+                msg: "User must be atleast 10 years old."
+            }
+        },
+    },
+
+    address: {
+        type: DataTypes.TEXT
     }
+
 });
+
+module.exports = User;

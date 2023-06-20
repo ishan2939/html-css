@@ -42,3 +42,15 @@ const ERROR_INTERNAL_SERVER_ERROR = {
     code: 500,
     message: "Internal Server Error"
 };
+
+module.exports = {
+    ERROR_OK, 
+    SUCCESS_ACCEPTED, 
+    SUCCESS_CREATED, 
+    ERROR_BAD_REQUEST, 
+    ERROR_UNAUTHORIZED, 
+    ERROR_PAYMENT_REQUIRED, 
+    ERROR_FORBIDDEN, 
+    ERROR_NOT_FOUND, 
+    ERROR_INTERNAL_SERVER_ERROR
+};
