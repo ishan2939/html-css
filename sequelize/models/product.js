@@ -3,13 +3,13 @@ const sequelize = require('../database/connection');
 
 const Product = sequelize.define("product", {
 
-    productId: {
+    productId: {    //PRODUCT ID
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
 
-    productName: {
+    productName: {  //PRODUCT NAME
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -26,7 +26,7 @@ const Product = sequelize.define("product", {
         }
     },
 
-    productIcon: {
+    productIcon: {  //PRODUCT ICON
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -43,7 +43,7 @@ const Product = sequelize.define("product", {
         }
     },
 
-    productPrice: {
+    productPrice: { //PRODUCT PRICE
         type: DataTypes.DOUBLE,
         allowNull: false,
         validate: {
@@ -57,7 +57,7 @@ const Product = sequelize.define("product", {
         }
     },
 
-    productQuantity: {
+    productQuantity: {  //PRODUCT QUANTITY
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
@@ -71,7 +71,7 @@ const Product = sequelize.define("product", {
         }
     },
 
-    productDesc: {
+    productDesc: {  //PRODUCT DESCRIPTION
         type: DataTypes.TEXT,
         defaultValue: 'No description found.'
     }

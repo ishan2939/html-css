@@ -1,3 +1,5 @@
+//custom error objects
+
 const ERROR_OK = {
     code: 200,
     message: "OK"

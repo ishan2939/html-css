@@ -3,17 +3,20 @@ const sequelize = require('../database/connection');
 
 const OrderItem = sequelize.define("orderItem", {
 
-    orderItemId: {
+    orderItemId: {  //ORDER ITEM ID
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
 
-    productQuantity: {
+    productQuantity: {  //PRODUCT QUANTITY
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
-            min: 1
+            min: {
+                args: 1,
+                msg: "Product quantity is invalid."
+            }
         }
     }
 

@@ -3,13 +3,13 @@ const sequelize  = require('../database/connection');
 
 const User = sequelize.define("user", {
 
-    userId: {
+    userId: {   //USER ID
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
 
-    fname: {
+    fname: {    //USER FIRST NAME
         type: DataTypes.STRING(20),
         allowNull: false,
         validate: {
@@ -22,17 +22,17 @@ const User = sequelize.define("user", {
         }
     },
 
-    lname: {
+    lname: {    //USER LASTNAME
         type: DataTypes.STRING(20),
         defaultValue: ""
     },
 
-    fullName: {
+    fullName: { //USER FULLNAME VIRTUAL PROPERTY
         type: DataTypes.VIRTUAL,
-        get() {
+        get() { //getter
             return this.getDataValue('fullName');
         },
-        set() {
+        set() { //setter
             const fname = this.getDataValue('fname');
             const lname = this.getDataValue('lname');
 
@@ -43,7 +43,7 @@ const User = sequelize.define("user", {
         }
     },
 
-    email: {
+    email: {    //USER EMAIL
         type: DataTypes.STRING,
         allowNull: false,
         unique: {
@@ -59,7 +59,7 @@ const User = sequelize.define("user", {
         }
     },
 
-    password: {
+    password: { //USER PASSWORD
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -73,7 +73,7 @@ const User = sequelize.define("user", {
         },
     },
 
-    gender: {
+    gender: {   //USER GENDER
         type: DataTypes.STRING,
         defaultValue: "male",
         validate: {
@@ -84,7 +84,7 @@ const User = sequelize.define("user", {
         },
     },
 
-    birthDate: {
+    birthDate: {    //USER BIRTHDATE
         type: DataTypes.DATE,
         validate: {
             isDate: {
@@ -97,7 +97,7 @@ const User = sequelize.define("user", {
         },
     },
 
-    address: {
+    address: {  //USER ADDRESS
         type: DataTypes.TEXT
     }
 

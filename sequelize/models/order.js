@@ -3,18 +3,18 @@ const sequelize  = require('../database/connection');
 
 const Order = sequelize.define('order', {
 
-    orderId: {
+    orderId: {  //ORDER ID
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
 
-    orderStatus: {
+    orderStatus: {  //ORDER STATUS
         type: DataTypes.ENUM('confirmed', 'shipped', 'out for delivery', 'delivered', 'cancelled'),
         allowNull: false
     },
 
-    expectedDeliveryDate: {
+    expectedDeliveryDate: { //EXPECTED DELIVERY DATE
         type: DataTypes.DATE
     }
 

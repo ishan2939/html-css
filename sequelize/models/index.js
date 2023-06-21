@@ -5,13 +5,12 @@ const Product = require('./product');
 const Order = require('./order');
 const OrderItem = require('./orderItems');
 
-exports.syncTables = () => {
+exports.syncTables = () => {    //sync tables
 
-    User.hasMany(Order, { foreignKey: "userId" });
+    User.hasMany(Order, { foreignKey: "userId", onDelete: 'CASCADE' });
     Order.belongsTo(User,
         {
-            foreignKey: "userId",
-            onDelete: 'CASCADE'
+            foreignKey: "userId"
         }
     );
 
@@ -22,13 +21,12 @@ exports.syncTables = () => {
         }
     );
 
-    Product.hasMany(OrderItem, { foreignKey: "productId" });
+    Product.hasMany(OrderItem, { foreignKey: "productId", onDelete: 'CASCADE' });
     OrderItem.belongsTo(Product,
         {
-            foreignKey: "productId",
-            onDelete: 'CASCADE'
+            foreignKey: "productId"
         }
     );
 
-    sequelize.sync({ alter: true });
+    sequelize.sync({ alter: true });    //allow alter
 };

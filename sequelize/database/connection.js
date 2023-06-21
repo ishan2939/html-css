@@ -7,10 +7,12 @@ dotenv.config({ path: path.join(__dirname, '..', 'constants', '.env') });
 
 const sequelize = new Sequelize('ecommerce', process.env.MYSQL_USERNAME, process.env.MYSQL_PASSWORD, {
     host: 'localhost',
-    dialect: 'mysql'
-});
+    dialect: 'mysql',
+    //logging: false
+}); //create sequelize object with database name, username and password
 
-const connect_to_DB = async () => {
+
+const connect_to_DB = async () => { //connect to db
 
     try{
         await sequelize.authenticate();
